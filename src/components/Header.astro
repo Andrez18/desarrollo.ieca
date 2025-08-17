@@ -1,8 +1,11 @@
 ---
-import "../styles/global.css"
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects')
+export const prerender = true
 ---
 
-<header class="flex justify-between items-center p-4 mx-8 text-white font-Poppins">
+<header class="flex justify-between items-center p-4 mx-17 text-white font-Poppins">
     <nav class="flex">
         <ul class="list-none flex">
             <li><a href="" class="size-5 hover:underline">PROYECTOS</a>  /</li>
@@ -11,6 +14,6 @@ import "../styles/global.css"
         </ul>
     </nav>
     <div>
-        <p>PROYECTOS()</p>
+        <p>PROYECTOS({projects.length})</p>
     </div>
 </header>
