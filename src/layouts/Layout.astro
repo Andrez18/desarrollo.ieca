@@ -1,3 +1,12 @@
+---
+import '../styles/global.css';
+
+interface Props{
+	title: string;
+}
+const { title } = Astro.props;	
+---
+
 <!doctype html>
 <html lang="es">
 	<head>
@@ -5,7 +14,7 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Desarrollo - IECA</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
