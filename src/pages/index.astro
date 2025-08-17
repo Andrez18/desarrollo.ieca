@@ -1,97 +1,84 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Layout from "../layouts/Layout.astro";
-
-const now = new Date();
-
-const dias = ["DOM", "LUN", "MAR", "MIE", "JUE", "VIE", "SAB"];
-const diaSemana = dias[now.getDay()];
-const diaMes = now.getDate();
-
-const horas = String(now.getHours()).padStart(2, "0");
-const minutos = String(now.getMinutes()).padStart(2, "0");
-const anio = now.getFullYear();
-
-const fechaFormateada = `${diaSemana} ${diaMes} \\ ${horas}:${minutos} \\ ${anio}`;
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Inicio - Desarrollo IECA">
-  <div
-    class="relative min-h-screen bg-cover bg-center bg-no-repeat"
-    style="background-image: url('/desarrollo-home.png');"
-  >
-    <div class="absolute inset-0 bg-opacity-70 pointer-events-none"></div>
-    <Header class="relative z-10" />
+	<div class="relative min-h-screen bg-cover bg-center bg-no-repeat" 
+		 style="background-image: url('/desarrollo-home.png');">
+		 
+		<div class="absolute inset-0 bg-opacity-70 pointer-events-none"></div>
+		<Header class="relative z-10" />
+		
+		<div class="relative z-10 px-6 py-12 lg:px-12 max-w-7xl mx-auto text-white">
+			<div class="grid lg:grid-cols-2 gap-12 items-start">
+				<div class="space-y-8">
+					<div>
+						<h1 class="text-6xl lg:text-6xl font-bold mb-3 leading-[64.4px]">
+							DESARROLLANDO<br>
+							<span>CALIDAD</span>
+						</h1>
+						
+						<p class="text-[var(--text-blue-dark)] text-[18px] uppercase tracking-[2px] mb-[280px] leading-[24.4px]">
+							ENFOCADOS EN EL DESARROLLO Y<br>
+							LA EDUCACIÓN CON CALIDAD
+						</p>
+						
+						<p class="text-[var(text-light)] text-[15px] leading-relaxed max-w-md font-regular">
+							Estudiar desarrollo de software no es solo aprender a programar, 
+							se construye un camino, crear sus propuestas y nunca olvidar el 
+							poder de lo que te hace único en este mundo digital.
+						</p>
+					</div>
+				</div>
 
-    <div class="relative z-10 px-6 py-12 lg:px-12 max-w-7xl mx-auto text-white">
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
-        <div class="space-y-8">
-          <div>
-            <h1 class="text-6xl lg:text-6xl font-bold mb-3 leading-[64.4px]">
-              DESARROLLANDO<br />
-              <span>CALIDAD</span>
-            </h1>
+				<div class="space-y-12">
+					<div class="text-right">
+						<div class="text-8xl lg:text-9xl font-regular text[var(--text-light)] tracking-[-7px]">
+							<span id="year"></span>
+						</div>
+						<p id="clock" class="text-[20px] text-[var(--text-blue-dark)] mt-[25px]"></p>
+					</div>
 
-            <p
-              class="text-[var(--text-blue-dark)] text-[18px] uppercase tracking-[2px] mb-[280px] leading-[24.4px]"
-            >
-              ENFOCADOS EN EL DESARROLLO Y<br />
-              LA EDUCACIÓN CON CALIDAD
-            </p>
+					<div class="bg-white text-black rounded-lg p-6 ml-48 max-w-sm mt-[200px]">
+						<h3 class="text-xl font-bold mb-2">BLOG</h3>
+						<p class="text-sm text-[#373733] mb-4">
+							Descubre de los últimos noticias<br>
+							relacionados con la media técnica
+						</p>
+						<button class="bg-[#131313] text-white px-6 py-2 rounded-full text-sm transition-colors flex items-center gap-2">
+							VER AHORA
+							<svg class="w-8 h-8 p-2 rounded-full bg-[var(--text-blue-light)] hover:ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<Footer />
 
-            <p
-              class="text-[var(text-light)] text-[15px] leading-relaxed max-w-md font-regular"
-            >
-              Estudiar desarrollo de software no es solo aprender a programar,
-              se construye un camino, crear sus propuestas y nunca olvidar el
-              poder de lo que te hace único en este mundo digital.
-            </p>
-          </div>
-        </div>
+	<!-- Script para actualizar la fecha/hora en tiempo real -->
+	<script client:load>
+		function updateClock() {
+			const now = new Date();
 
-        <div class="space-y-12">
-          <div class="text-right">
-            <div
-              class="text-8xl lg:text-9xl font-regular text[var(--text-light)] tracking-[-7px]"
-            >
-              {anio}
-            </div>
-            <p class="text-[20px] text-[var(--text-blue-dark)] mt-[25px]">
-              {fechaFormateada}
-            </p>
-          </div>
+			const dias = ["DOM", "LUN", "MAR", "MIE", "JUE", "VIE", "SAB"];
+			const diaSemana = dias[now.getDay()];
+			const diaMes = now.getDate();
+			const horas = String(now.getHours()).padStart(2, "0");
+			const minutos = String(now.getMinutes()).padStart(2, "0");
+			const anio = now.getFullYear();
 
-          <div
-            class="bg-white text-black rounded-lg p-6 ml-48 max-w-sm mt-[200px]"
-          >
-            <h3 class="text-xl font-bold mb-2">BLOG</h3>
-            <p class="text-sm text-[#373733] mb-4">
-              Descubre de los últimos noticias<br />
-              relacionados con la media técnica
-            </p>
-            <button
-              class="bg-[#131313] text-white px-6 py-2 rounded-full text-sm transition-colors flex items-center gap-2"
-            >
-              VER AHORA
-              <svg
-                class="w-8 h-8 p-2 rounded-full bg-[var(--text-blue-light)] hover:ml-1.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+			document.getElementById("year").innerText = anio;
+			document.getElementById("clock").innerText = 
+				`${diaSemana} ${diaMes} \\ ${horas}:${minutos} \\ ${anio}`;
+		}
 
-  <Footer />
+		updateClock(); // primera vez
+		setInterval(updateClock, 1000); // cada segundo
+	</script>
 </Layout>
