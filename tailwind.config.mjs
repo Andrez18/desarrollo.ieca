@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: ['Poppins'],
+        bowlbyOne: ['Bowbly One', 'sans-serif'],
       },
     },
   },
