@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Inicio - Desarrollo IECA">
-	<div class="relative min-h-screen bg-cover bg-center bg-no-repeat" 
+	<section class="relative min-h-screen bg-cover bg-center bg-no-repeat" 
 		 style="background-image: url('/desarrollo-home.png');">
 		 
 		<div class="absolute inset-0 bg-opacity-70 pointer-events-none"></div>
@@ -15,7 +15,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class="grid lg:grid-cols-2 gap-12 items-start">
 				<div class="space-y-8">
 					<div>
-						<h1 class="text-6xl lg:text-6xl font-bold mb-3 leading-[64.4px]">
+						<h1 class="text-6xl lg:text-6xl font-bold mb-3 leading-[64.4px]" id="home">
 							DESARROLLANDO<br>
 							<span>CALIDAD</span>
 						</h1>
@@ -57,11 +57,101 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 			</div>
 		</div>
-	</div>
-	
+	</section>
+	<section class="relative min-h-screen bg-black text-white overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <h2 class="text-[128px] lg:text-[128px] font-bowlbyOne font-bold text-[var(--background-light)] select-none leading-none">
+            PROYECTOS
+          </h2>
+        </div>
+
+        <div class="absolute bottom-0 left-0 pointer-events-none">
+          <h3 class="text-[128px] lg:text-[128px] font-bowlbyOne font-bold text-[var(--background-light)] select-none leading-none justify-center-safe">
+            DESTACADOS
+          </h3>
+        </div>
+
+        <div class="relative z-10 px-6 py-12 lg:px-12 max-w-7xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-12 min-h-screen">
+            <div class="flex flex-col justify-between">
+				
+              <div class="space-y-6 mt-48">
+				  <div>
+					  <h3 class="text-[var(--text-blue-dark)] text-sm font-medium mb-4 tracking-wider">• SOBRE ESTE</h3>
+					  <p class="text-gray-300 text-sm leading-relaxed max-w-[294px] font-medium">
+						  Desarrollo de un sitio web acerca de la media técnica de la misma institución.
+						</p>
+				  </div>
+				</div>
+				
+				<div class="pb-8">
+					<h4 class="text-[var(--text-blue-dark)] text-sm font-medium mb-4 tracking-wider">/ ÚLTIMO PROYECTO 2025</h4>
+					<p class="text-gray-300 text-sm leading-relaxed mb-6 max-w-md">
+						Se desarrolló un sitio web para obtener información más a la mano sobre la Media Técnica para
+						demostrar con el mismo sitio web lo que se construye dentro de la misma, accediendo a información
+						relevante como los módulos y algunos proyectos realizados.
+					</p>
+					<a
+					href="#"
+					class="inline-flex items-center text-white text-sm font-medium hover:[var(--text-blue-light)] transition-colors group"
+					>
+                  IR A LOS PROYECTOS
+                  <svg
+                    class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+					>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-center space-y-8">
+			  <div class="pt-8">
+				<h1 class="text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight mb-12">
+				  <span class="text-[var(--text-grey-light)] text-2xl text-center align-middle mr-12">/ 01</span>ENTRAR A LA
+				  <br />
+				  MEDIA TÉCNICA ES
+				  <br />
+				  MÁS QUE SOLO UN
+				  <br />
+				  TÍTULO.
+				</h1>
+			  </div>
+              <div class="relative flex">
+                <img
+                  src="/projects-home-1.png"
+                  alt="Colaboración en oficina moderna"
+                  class="w-[362px] h-[360px] object-cover"
+                />
+              </div>
+              <div class="relative flex">
+                <div class="flex items-end space-x-4">
+                  <img
+                    src="/projects-home-2.png"
+                    alt="Manos escribiendo en teclado"
+                    class="w-[362px] h-[195px] object-cover"
+                  />
+                  <div class="text-right space-y-2">
+                    <div class="text-gray-400 text-xs tracking-wider">
+                      WEB
+                      <br />
+                      MEDIA TÉCNICA
+                      <br />
+                      DESARROLLO
+                    </div>
+                    <div class="text-[var(--text-blue-dark)] text-2xl font-bold">2025</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 	<Footer />
 
-	<!-- Script para actualizar la fecha/hora en tiempo real -->
 	<script client:load>
 		function updateClock() {
 			const now = new Date();
@@ -75,10 +165,10 @@ import Layout from '../layouts/Layout.astro';
 
 			document.getElementById("year").innerText = anio;
 			document.getElementById("clock").innerText = 
-				`${diaSemana} ${diaMes} \\ ${horas}:${minutos} \\ ${anio}`;
+				`${diaSemana} ${diaMes} \\ ${horas}:${minutos}`;
 		}
 
-		updateClock(); // primera vez
-		setInterval(updateClock, 1000); // cada segundo
+		updateClock();
+		setInterval(updateClock, 1000); 
 	</script>
 </Layout>
