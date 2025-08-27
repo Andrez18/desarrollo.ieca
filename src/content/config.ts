@@ -11,6 +11,7 @@ const projects = defineCollection({
       git: z.string().url(),
       site: z.string().url(),
     }),
+    
   })
 })
 

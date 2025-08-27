@@ -1,9 +1,9 @@
 ---
-title: LOXI
+title: LOXI 1
 author: Andrés Felipe Gómez Jiménez
-img: aprendiendo-git.jpg
+img: /projects/loxi-2025.png
 developedyear: 2025
-description: Proyecto para suplir la necesidad de la lógica de programación.
+description: Proyecto que buscaba solucionar la falta de pensamiento lógico para resolver problemas dentro de la Media Técnica
 get:
    git: https://github.com/Mateo-808/LOXI
    site: https://loxi-one.vercel.app/
