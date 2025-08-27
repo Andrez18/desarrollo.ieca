@@ -2,20 +2,19 @@
 import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects')
-export const prerender = true
 ---
 
 <header class="flex justify-between items-center p-4 mx-17 text-white font-Poppins ">
     <nav class="flex items-center">
         <ul class="list-none flex items-center space-x-2">
-            <li><a href="" class="text-xl hover:underline">PROYECTOS</a></li>
+            <li><a href="/projects" class="text-xl hover:underline">PROYECTOS</a></li>
             <li class="text-xl">/</li>
             <li><a href="" class="text-xl hover:underline">BLOG</a></li>
         </ul>
     </nav>
     
     <div class="flex items-center">
-        <img src="/logotipo.png" alt="Logo MT" class="h-12 w-auto">
+        <a href="/"><img src="/logotipo.png" alt="Logo MT" class="h-12 w-auto"></a>
     </div>
     
     <div class="flex items-center space-x-2">

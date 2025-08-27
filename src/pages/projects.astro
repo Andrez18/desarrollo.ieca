@@ -1,0 +1,323 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+
+const years = Array.from(
+  new Set(projects.map((p) => p.data.developedyear))
+).sort((a, b) => b - a);
+---
+
+<Layout title="Proyectos - Desarrollo IECA">
+  <Header />
+  <section class="min-h-screen">
+    <div class="max-w-7xl mx-auto">
+      <!-- Main heading -->
+      <div class="text-center">
+        <h1
+          class="text-[230px] md:text-[230px] lg:text-[230px] font-regular tracking-[-5px] text-white"
+        >
+          PROYECTOS
+        </h1>
+      </div>
+
+      <!-- Description text blocks -->
+      <div class="grid md:grid-cols-2 gap-18 mb-16">
+        <div class="text-left">
+          <p
+            class="text-[var(--text-blue-light)] text-lg md:text-xl leading-[129.7%] tracking-[-1px] ml-4"
+          >
+            Conoce los proyectos<br />
+            desarrollados por nuestros<br />
+            estudiantes.
+          </p>
+        </div>
+        <div class="text-right md:text-right md:ml-auto">
+          <p
+            class="text-[var(--text-blue-light)] text-lg md:text-xl leading-[129.7%] tracking-[-1px] mr-1"
+          >
+            Clasifica y explora los<br />
+            proyectos por los que más<br />
+            te interesan.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image section -->
+      <div class="w-full">
+        <img
+          src="/image-1-projects.png"
+          alt="Estudiante programando en laptop con código en pantalla"
+          class="w-[1305px] h-[266px] md:h-[266px] lg:h-[266px] object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section
+    aria-label="Los proyectos más destacados"
+    class="bg-gray-100 text-gray-900 py-12 px-6 mt-12"
+  >
+  <header class="max-w-6xl mx-auto mb-12">
+    <div class="mb-6">
+      <h2 class="text-2xl font-medium mb-4">Filtrar por</h2>
+  
+      <div class="flex justify-between items-center gap-6 flex-wrap">
+        <div class="flex gap-4">
+          <!-- Select Categoría -->
+          <!-- <div class="relative">
+            <select
+              id="categoryFilter"
+              class="appearance-none px-4 py-2 rounded-full border border-black text-lg font-medium pr-8 focus:outline-none"
+            >
+              <option value="">Categoría</option>
+              <option value="educacion">Educación</option>
+              <option value="algoritmos">Algoritmos</option>
+              <option value="juegos">Juegos</option>
+            </select>
+            <span class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-black">⌄</span>
+          </div> -->
+        
+          <div class="relative">
+            <select
+              id="yearFilter"
+              class="appearance-none px-4 py-2 rounded-full border border-black text-lg font-medium pr-8 focus:outline-none"
+            >
+              <option value="">Año</option>
+              {years.map((year) => (
+                <option value={year}>{year}</option>
+              ))}
+            </select>
+            <span class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-black">⌄</span>
+          </div>
+        </div>
+      
+        <!-- Buscador -->
+        <div class="relative w-48">
+          <input
+            type="text"
+            id="search"
+            placeholder="Buscar"
+            class="w-full px-4 py-2 pr-10 rounded-full border border-black text-xl font-medium focus:outline-none"
+          />
+          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-black">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+        </div>
+      
+      </div>
+    </div>
+  </header>
+<div class="flex flex-col lg:flex-row pt-8 gap-12">
+  <!-- Lado izquierdo -->
+  <div class="lg:w-1/3">
+    <h2 class="text-[#1e1e1e] text-[40px] font-medium uppercase tracking-[-0.05em] leading-[120.8%] mb-3">
+      Proyectos Destacados
+    </h2>
+    <p class="text-[#2e2e2e] text-2xl leading-[120.8%] tracking-[-0.02em]">
+      Algunos de nuestros proyectos destacados y más completos en cuanto a funcionalidad
+    </p>
+
+    <a
+      href="#"
+      class="pl-3 inline-flex items-center gap-2 text-[var(--text-light)] bg-[var(--background-dark)] rounded-[20px] w-[200px] h-[42px] text-center justify-center uppercase font-medium mt-6 transition-all duration-500 ease-in-out hover:scale-105"
+    >
+      Mostrar todos
+      <span class="flex items-center justify-center bg-[var(--text-light)] rounded-full w-[40px] h-[40px]">
+        <i class="fa-solid fa-arrow-right text-[15.4px] text-[var(--text-dark)]"></i>
+      </span>
+    </a>
+  </div>
+
+  <!-- Grid de proyectos -->
+<div class="space-y-12">
+  {projects.map((project, index) => {
+    const { slug, data } = project;
+    const { title, description, img } = data;
+    const num = String(index + 1).padStart(2, "0");
+
+    return (
+      <article
+  class="grid grid-cols-1 md:grid-cols-10 items-center gap-6 pb-4 max-w-4xl mx-auto"
+  key={slug}
+>
+  {/* Imagen izquierda si index impar */}
+  {index % 2 !== 0 && (
+    <div class="md:col-span-3 md:col-start-2 order-1">
+      <img src={img} alt={title} class="w-[210px] h-[180px] object-cover" />
+      <p class="text-[11px] uppercase text-gray-500 mt-1">
+        Imagen del desarrollo
+      </p>
+    </div>
+  )}
+
+  {/* Contenido */}
+  <div
+    class={`md:col-span-7 flex flex-col gap-3 ${
+      index % 2 !== 0 ? "order-2 text-right md:col-start-5" : "order-1"
+    }`}
+  >
+    {/* Encabezado con número dinámico */}
+    <div
+      class={`flex items-baseline gap-2 ${
+        index % 2 !== 0 ? "justify-end" : ""
+      }`}
+    >
+      {index % 2 === 0 && (
+        <span class="text-[#1919199C] text-[15px] font-light">/{num}</span>
+      )}
+      <h3 class="text-[48px] font-medium uppercase text-[var(--text-dark)]">
+        {title}
+      </h3>
+      {index % 2 !== 0 && (
+        <span class="text-[15px] font-light text-[var(--text-dark)]">
+          /{num}
+        </span>
+      )}
+    </div>
+
+    {/* Descripción */}
+    <p class="text-[#1e1e1e] font-regular text-[24px] leading-[128.7%] tracking-[-7%]">
+      {description}
+    </p>
+
+    {/* Enlaces */}
+    <div
+      class={`flex gap-6 text-sm font-medium text-[var(--text-blue-dark)] uppercase mt-2 ${
+        index % 2 !== 0 ? "justify-end" : ""
+      }`}
+    >
+      <a href="#" class="hover:underline">
+        Explorar repositorio
+      </a>
+      <a href={`/projects/${slug}`} class="hover:underline">
+        Ir al proyecto ↗
+      </a>
+    </div>
+  </div>
+
+  {/* Imagen derecha si index par */}
+  {index % 2 === 0 && (
+    <div class="md:col-span-3 order-2 ml-auto">
+      <img src={img} alt={title} class="w-[210px] h-[180px] object-cover" />
+      <p class="text-[11px] uppercase text-gray-500 mt-1">
+        Imagen del desarrollo
+      </p>
+    </div>
+  )}
+</article>
+
+    );
+  })}
+</div>
+
+<p id="noResults" class="text-center text-gray-500 mt-6 hidden">
+  No se encontró ningún proyecto
+</p>
+  </section>
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("search");
+    const yearFilter = document.getElementById("yearFilter");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const suggestionsBox = document.getElementById("suggestions");
+    const projects = document.querySelectorAll(".project-item");
+    const noResults = document.getElementById("noResults");
+
+    // 🔹 Ocultar todos menos los 3 primeros
+    projects.forEach((project, index) => {
+      if (index >= 3) {
+        project.style.display = "none";
+      }
+    });
+
+    function filtrar() {
+      const search = searchInput.value.toLowerCase();
+      const year = yearFilter.value;
+      const category = categoryFilter.value;
+
+      let visibleCount = 0;
+
+      projects.forEach((project, index) => {
+        const title = project.dataset.title;
+        const description = project.dataset.description;
+        const projectYear = project.dataset.year;
+
+        const coincideBusqueda =
+          !search || title.includes(search) || description.includes(search);
+        const coincideYear = !year || projectYear === year;
+        const coincideCategory =
+          !category || project.classList.contains(category);
+
+        if (coincideBusqueda && coincideYear && coincideCategory) {
+          project.style.display = "block";
+          visibleCount++;
+        } else {
+          project.style.display = "none";
+        }
+      });
+
+      // Mostrar/ocultar mensaje de no resultados
+      if (visibleCount === 0) {
+        noResults.classList.remove("hidden");
+      } else {
+        noResults.classList.add("hidden");
+      }
+    }
+
+    function mostrarSugerencias(texto) {
+      const search = texto.toLowerCase();
+      const matches = [];
+
+      projects.forEach((project) => {
+        const title = project.dataset.title;
+        const description = project.dataset.description;
+
+        if (title.includes(search) || description.includes(search)) {
+          matches.push(title);
+        }
+      });
+
+      suggestionsBox.innerHTML = "";
+
+      if (search && matches.length > 0) {
+        matches.slice(0, 5).forEach((match) => {
+          const li = document.createElement("li");
+          li.textContent = match;
+          li.className = "px-4 py-2 cursor-pointer hover:bg-gray-100";
+          li.addEventListener("click", () => {
+            searchInput.value = match;
+            suggestionsBox.classList.add("hidden");
+            filtrar();
+          });
+          suggestionsBox.appendChild(li);
+        });
+        suggestionsBox.classList.remove("hidden");
+      } else {
+        suggestionsBox.classList.add("hidden");
+      }
+    }
+
+    // eventos
+    searchInput.addEventListener("input", (e) => {
+      mostrarSugerencias(e.target.value);
+    });
+
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        suggestionsBox.classList.add("hidden");
+        filtrar();
+      }
+    });
+
+    yearFilter.addEventListener("change", filtrar);
+    categoryFilter.addEventListener("change", filtrar);
+  });
+</script>
