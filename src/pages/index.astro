@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Inicio - Desarrollo IECA">
 	<section class="relative min-h-screen bg-cover bg-center bg-no-repeat" 
-		 style="background-image: url('/desarrollo-home.png');">
+		style="background-image: url('/desarrollo-home.png');">
 		 
 		<div class="absolute inset-0 bg-opacity-70 pointer-events-none"></div>
 		<Header class="relative z-10" />
@@ -17,13 +17,11 @@ import Layout from '../layouts/Layout.astro';
 				<div class="space-y-6 sm:space-y-8">
 					<div>
 						<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3 leading-tight" id="home">
-							DESARROLLANDO<br>
-							<span>CALIDAD</span>
+							DESARROLLANDO CALIDAD
 						</h1>
 						
-						<p class="text-[var(--text-blue-dark)] text-sm sm:text-base lg:text-[18px] uppercase tracking-[1px] sm:tracking-[2px] mb-12 sm:mb-24 lg:mb-[280px] leading-relaxed">
-							ENFOCADOS EN EL DESARROLLO Y<br class="hidden sm:block">
-							LA EDUCACIÓN CON CALIDAD
+						<p class="text-[var(--text-blue-dark)] text-sm sm:text-base lg:text-[18px] uppercase tracking-[1px] sm:tracking-[2px] mb-12 sm:mb-24 lg:mb-[280px] leading-relaxed text-balance">
+							ENFOCADOS EN EL DESARROLLO Y LA EDUCACIÓN CON CALIDAD
 						</p>
 						
 						<p class="text-[var(text-light)] text-sm sm:text-[15px] leading-relaxed max-w-md font-regular">
@@ -47,9 +45,8 @@ import Layout from '../layouts/Layout.astro';
 					<!-- Card del blog -->
 					<div class="bg-white text-black rounded-lg p-4 sm:p-6 mx-auto lg:ml-auto lg:mr-0 max-w-sm mt-8 sm:mt-12 lg:mt-[200px]">
 						<h3 class="text-lg sm:text-xl font-bold mb-2">BLOG</h3>
-						<p class="text-xs sm:text-sm text-[#373733] mb-4">
-							Descubre de los últimos noticias<br>
-							relacionados con la media técnica
+						<p class="text-xs sm:text-sm text-[#373733] mb-4 text-balance">
+							Descubre de los últimos noticias relacionados con la media técnica
 						</p>
 						<button class="bg-[#131313] text-[var(--text-light)] px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm transition-colors flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start">
 							VER AHORA
@@ -116,10 +113,7 @@ import Layout from '../layouts/Layout.astro';
 					<div class="pt-4 sm:pt-8">
 						<h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-semibold leading-tight mb-8 sm:mb-12">
 							<span class="text-[var(--text-grey-light)] text-lg sm:text-xl lg:text-2xl text-center align-middle mr-4 sm:mr-8 lg:mr-12">/ 01</span>
-							ENTRAR A LA<br />
-							MEDIA TÉCNICA ES<br />
-							MÁS QUE SOLO UN<br />
-							TÍTULO.
+							ENTRAR A LA MEDIA TÉCNICA ES MÁS QUE SOLO UN TÍTULO.
 						</h1>
 					</div>
 
@@ -146,7 +140,7 @@ import Layout from '../layouts/Layout.astro';
 						<div class="text-gray-400 text-xs tracking-wider">
 							WEB<br />
 							MEDIA TÉCNICA<br />
-							DESARROLLO
+							<span class="font-bold">DESARROLLO</span>
 						</div>
 						<div class="text-[var(--text-blue-dark)] text-xl sm:text-2xl font-bold">2025</div>
 					</div>
@@ -158,61 +152,60 @@ import Layout from '../layouts/Layout.astro';
 	<section class="bg-[#373733] min-h-[100dvh]">
     	<div class="p-6">
     	  <header class="flex justify-between items-center mb-4 px-2">
-    	    <div class="text-[9px] text-[#0a4f9a] font-semibold uppercase leading-none tracking-widest">
-    	      <span class="inline-block mr-1">•</span> Nuestra Calidad
+    	    <div class="text-xs text-[#0a4f9a] font-semibold uppercase leading-none tracking-widest">
+    	      <span class="inline-block mr-1">•</span>Nuestra Calidad
     	    </div>
-    	    <h1
-    	      class="text-white font-bold text-[18px] leading-tight text-center"
-    	    >
-    	      REPRESENTADOS POR NUESTRA CALIDAD
+    	    <h1 class="text-white font-bold text-4xl leading-tight text-center">
+				REPRESENTADOS POR NUESTRA CALIDAD
     	    </h1>
     	    <div class="text-gray-400 font-light tracking-wide select-none">
     	      / 02
     	    </div>
     	  </header>
-    	  <div class="relative">
+    	  <div class="relative flex flex-row justify-center">
     	    <img
     	      alt="Dos personas trabajando en un escritorio con una laptop y un monitor, mujer joven y hombre mayor con barba blanca"
-    	      class="min-h-[100%] object-cover"
+    	      class="max-w-[90%] object-cover"
     	      height=""
-    	      src="/projects-home-1.png"
+    	      src="/image-6.png"
     	      width=""
     	    />
-    	    <div
-    	      class="absolute top-2 left-2 text-[8px] text-gray-300 font-light leading-tight max-w-[40%] select-none"
-    	    >
+    	    <div class="absolute top-3 left-20 text-1xl text-gray-300 font-light leading-tight select-none max-w-[325px]">
     	      Reconocidos por nuestra ardua labor en el mundo del desarrollo
     	    </div>
     	  </div>
     	  <div class="flex justify-between items-start mt-4 px-2">
     	    <div
-    	      class="text-[8px] text-gray-400 font-light max-w-[50%] leading-tight select-none"
+    	      class="text-xs text-gray-400 font-light max-w-[50%] leading-tight select-none"
     	    >
-    	      <span class="font-bold uppercase">Ir a los módulos</span><br />
-    	      El lugar donde la calidad y la innovación se unen para crear
-    	      experiencias únicas, impulsando ideas que transforman, inspiran y
-    	      marcan la diferencia en cada proyecto que desarrollamos con pasión.
+    	      <a href="/modules" class="font-bold uppercase underline hover:text-white">Ir a los módulos</a>
+			  <p>
+				  El lugar donde la calidad y la innovación se unen para crear
+				  experiencias únicas, impulsando ideas que transforman, inspiran y
+				  marcan la diferencia en cada proyecto que desarrollamos con pasión.
+			  </p>
     	    </div>
     	    <div
-    	      class="text-[18px] font-extrabold text-white text-right max-w-[45%] leading-tight select-none"
+    	      class="text-4xl text-white text-right max-w-[35%] leading-tight select-none"
     	    >
-    	      CON LOS ESTÁNDARES<br />
-    	      MÁS ALTOS
+    	      CON LOS ESTÁNDARES MÁS ALTOS
     	    </div>
     	  </div>
-    	  <div class="flex justify-center gap-2 mt-6 px-2">
-    	    <button
-    	      class="border border-gray-400 text-[10px] font-semibold uppercase tracking-widest py-2 px-6 w-[45%] hover:bg-gray-700 transition-colors"
-    	      type="button"
+    	  <div class="flex justify-center mt-6 px-2 text-xs">
+    	    <a
+			  href="https://www.ieciudadelalasamericas.edu.co/" target="_blank" rel="noopener noreferrer"
+    	      class="border border-gray-400 font-semibold uppercase tracking-widest py-2 px-6 w-[15%] hover:bg-gray-700 transition-colors text-center"
     	    >
     	      Ciudadela Las Américas
-    	    </button>
-    	    <button
-    	      class="border border-gray-400 text-[10px] font-semibold uppercase tracking-widest py-2 px-6 w-[45%] hover:bg-gray-700 transition-colors"
-    	      type="button"
+    	    </a>
+
+			<a href="http://" target="_blank" rel="noopener noreferrer"></a>
+    	    <a
+			  href="https://pascualbravo.edu.co/" target="_blank" rel="noopener noreferrer"
+    	      class="border border-gray-400 font-semibold uppercase tracking-widest py-2 px-6 w-[15%] hover:bg-gray-700 transition-colors text-center"
     	    >
     	      Pascual Bravo
-    	    </button>
+    	    </a>
     	  </div>
     	</div>
 	</section>
