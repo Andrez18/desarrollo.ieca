@@ -51,7 +51,7 @@
   </a>
 
   <!-- Derecha -->
-  <a href="/#home" class="hover:underline not-italic md:text-right">
+  <a href="#" class="hover:underline not-italic md:text-right">
     Regresar arriba
   </a>
 </div>
@@ -116,4 +116,13 @@
       }
     });
   });
+
+  document.getElementById("scrollTop").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" // animación suave
+  });
+});
+
 </script>
