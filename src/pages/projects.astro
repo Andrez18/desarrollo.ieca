@@ -97,7 +97,7 @@ const years = Array.from(
     <div class="flex flex-col lg:flex-row pt-4 sm:pt-8 gap-8 lg:gap-12 max-w-6xl mx-auto">
       <!-- Lado izquierdo - Info destacados -->
       <div class="lg:w-1/3">
-        <h2 class="text-[#1e1e1e] text-2xl sm:text-3xl lg:text-[40px] font-medium uppercase tracking-[-0.05em] leading-[120.8%] mb-3">
+        <h2 class="text-[#1e1e1e] text-2xl sm:text-3xl lg:text-[40px] font-medium uppercase tracking-[-0.05em] leading-[120.8%] mb-3 mt-56">
           Proyectos Destacados
         </h2>
         <p class="text-[#2e2e2e] text-lg sm:text-xl lg:text-2xl leading-[120.8%] tracking-[-0.02em] mb-6">
@@ -119,7 +119,8 @@ const years = Array.from(
       <div class="lg:w-2/3 space-y-8 sm:space-y-12">
         {projects.map((project, index) => {
           const { slug, data } = project;
-          const { title, description, img } = data;
+          const { title, description, img, get } = data;
+          const { git, site } = get; // ✅ Desestructuramos desde "get"
           const num = String(index + 1).padStart(2, "0");
 
           return (
@@ -133,7 +134,11 @@ const years = Array.from(
               {/* Imagen izquierda si index impar - solo en desktop */}
               {index % 2 !== 0 && (
                 <div class="hidden lg:block lg:col-span-3 lg:col-start-2 order-1">
-                  <img src={img} alt={title} class="w-full max-w-[210px] h-[150px] sm:h-[180px] object-cover rounded-lg" />
+                  <img
+                    src={img}
+                    alt={title}
+                    class="w-full max-w-[210px] h-[150px] sm:h-[180px] object-cover rounded-lg bg-black"
+                  />
                   <p class="text-[10px] sm:text-[11px] uppercase text-gray-500 mt-1">
                     Imagen del desarrollo
                   </p>
@@ -141,17 +146,29 @@ const years = Array.from(
               )}
 
               {/* Contenido */}
-              <div class={`lg:col-span-7 flex flex-col gap-3 order-2 ${index % 2 !== 0 ? "lg:text-right lg:col-start-5" : "order-1"}`}>
-                {/* Imagen en móvil - siempre arriba */}
+              <div
+                class={`lg:col-span-7 lg:col-start-2 flex flex-col gap-3 order-2 ${
+                  index % 2 !== 0 ? "lg:text-right lg:col-start-5" : "order-1"
+                }`}
+              >
+                {/* Imagen en móvil */}
                 <div class="lg:hidden mb-4">
-                  <img src={img} alt={title} class="w-full max-w-[300px] h-[180px] object-cover rounded-lg mx-auto" />
+                  <img
+                    src={img}
+                    alt={title}
+                    class="w-full max-w-[300px] h-[180px] object-cover rounded-lg mx-auto"
+                  />
                   <p class="text-[11px] uppercase text-gray-500 mt-1 text-center">
                     Imagen del desarrollo
                   </p>
                 </div>
 
-                {/* Encabezado con número dinámico */}
-                <div class={`flex flex-col sm:flex-row items-start sm:items-baseline gap-2 ${index % 2 !== 0 ? "lg:justify-end" : ""}`}>
+                {/* Encabezado */}
+                <div
+                  class={`flex flex-col sm:flex-row items-start sm:items-baseline gap-2 ${
+                    index % 2 !== 0 ? "lg:justify-end" : ""
+                  }`}
+                >
                   <span class="text-[#1919199C] text-sm sm:text-[15px] font-light order-1 sm:order-none">
                     /{num}
                   </span>
@@ -166,20 +183,42 @@ const years = Array.from(
                 </p>
 
                 {/* Enlaces */}
-                <div class={`flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm font-medium text-[var(--text-blue-dark)] uppercase mt-2 ${index % 2 !== 0 ? "lg:justify-end" : ""}`}>
-                  <a href="#" class="hover:underline transition-colors">
-                    Explorar repositorio
-                  </a>
-                  <a href={`/projects/${slug}`} class="hover:underline transition-colors">
-                    Ir al proyecto ↗
-                  </a>
+                <div
+                  class={`flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm font-medium text-[var(--text-blue-dark)] uppercase mt-2 ${
+                    index % 2 !== 0 ? "lg:justify-end" : ""
+                  }`}
+                >
+                  {git && (
+                    <a
+                      href={git}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="hover:underline transition-colors"
+                    >
+                      Explorar repositorio
+                    </a>
+                  )}
+                  {site && (
+                    <a
+                      href={site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="hover:underline transition-colors"
+                    >
+                      Ir al proyecto ↗
+                    </a>
+                  )}
                 </div>
               </div>
 
-              {/* Imagen derecha si index par - solo en desktop */}
+              {/* Imagen derecha si index par */}
               {index % 2 === 0 && (
-                <div class="hidden lg:block lg:col-span-3 order-3 ml-auto">
-                  <img src={img} alt={title} class="w-full max-w-[210px] h-[150px] sm:h-[180px] object-cover rounded-lg" />
+                <div class="hidden lg:block lg:col-span-2 order-3 ml-auto">
+                  <img
+                    src={img}
+                    alt={title}
+                    class="w-full max-w-[210px] h-[150px] sm:h-[180px] object-cover"
+                  />
                   <p class="text-[10px] sm:text-[11px] uppercase text-gray-500 mt-1">
                     Imagen del desarrollo
                   </p>
@@ -195,25 +234,39 @@ const years = Array.from(
       No se encontró ningún proyecto
     </p>
   </section>
+  <section>
+    h2
+  </section>
 
   <!-- Modal para mostrar todos los proyectos -->
-  <div id="allProjectsModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50 p-4">
+  <div
+    id="allProjectsModal"
+    class="fixed inset-0 bg-[rgba(0,0,0,0.8)] bg-opacity-50 flex items-center justify-center hidden z-50 p-4"
+  >
     <div class="bg-white w-full max-w-6xl max-h-[90vh] rounded-2xl shadow-2xl overflow-hidden">
-      <!-- Header del modal -->
+      {/* Header del modal */}
       <div class="flex justify-between items-center p-6 border-b border-gray-200 bg-white sticky top-0 z-10">
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Todos los Proyectos</h2>
-        <button id="closeModal" class="text-gray-400 hover:text-gray-600 text-3xl font-light transition-colors">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">
+          Todos los Proyectos
+        </h2>
+        <button
+          id="closeModal"
+          class="text-gray-400 hover:text-gray-600 text-3xl font-light transition-colors"
+        >
           &times;
         </button>
       </div>
 
-      <!-- Contenido del modal -->
+      {/* Contenido del modal */}
       <div class="overflow-y-auto max-h-[calc(90vh-80px)] p-6">
-        <!-- Filtros del modal -->
+        {/* Filtros del modal */}
         <div class="mb-6 pb-4 border-b border-gray-200">
           <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
             <div class="flex flex-col sm:flex-row gap-3">
-              <select id="modalYearFilter" class="px-4 py-2 border text-[var(--text-dark)] border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <select
+                id="modalYearFilter"
+                class="px-4 py-2 border text-[var(--text-dark)] border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
                 <option value="">Todos los años</option>
                 {years.map((year) => (
                   <option value={year}>{year}</option>
@@ -232,7 +285,7 @@ const years = Array.from(
           </div>
         </div>
 
-        <!-- Contenido organizado por años -->
+        {/* Contenido organizado por años */}
         <div id="modalProjectsContainer">
           {years.map((year) => (
             <div class="modal-year-section mb-8" data-year={year}>
@@ -243,19 +296,20 @@ const years = Array.from(
                 {projects
                   .filter((project) => project.data.developedyear === year)
                   .map((project) => {
-                    const { slug, data } = project;
-                    const { title, description, img } = data;
-                    
+                    const { data } = project;
+                    const { title, description, img, get } = data;
+                    const { git, site } = get;
+
                     return (
-                      <div 
+                      <div
                         class="modal-project bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
                         data-title={title.toLowerCase()}
                         data-description={description.toLowerCase()}
                         data-year={year}
                       >
                         <div class="aspect-video overflow-hidden">
-                          <img 
-                            src={img} 
+                          <img
+                            src={img}
                             alt={title}
                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                           />
@@ -268,46 +322,72 @@ const years = Array.from(
                             {description}
                           </p>
                           <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                            <a 
-                              href={`/projects/${slug}`}
-                              class="inline-flex items-center justify-center px-4 py-2 bg-[var(--text-blue-dark)] text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
-                            >
-                              Ver proyecto
-                              <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                              </svg>
-                            </a>
-                            <a 
-                              href="#"
-                              class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors"
-                            >
-                              Repositorio
-                              <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0C5.37 0 0 5.37 0 12 0 17.31 3.435 21.795 8.205 23.385 8.805 23.49 9.03 23.13 9.03 22.815 9.03 22.53 9.015 21.585 9.015 20.475 5.67 21.135 4.965 18.795 4.965 18.795 4.425 17.475 3.63 17.115 3.63 17.115 2.55 16.425 3.705 16.44 3.705 16.44 4.815 16.665 5.445 17.79 5.445 17.79 6.495 19.455 8.175 18.915 9.075 18.585 9.18 17.79 9.495 17.25 9.84 16.92 7.17 16.59 4.38 15.555 4.38 11.07 4.38 9.795 4.845 8.76 6.045 8.76 6.045 7.005 5.985 4.005 7.695 4.005 7.695 5.265 3.825 7.035 3.825 7.035 8.55 3.93 10.725 3.93 12.84 4.905 13.005 6.135 13.23 7.515 13.275 8.73 13.275 10.695 13.125 12 13.125 17.385 18.435 21.795 12 21.795 5.37 21.795 0 16.425 0 12Z"/>
-                              </svg>
-                            </a>
+                            {site && (
+                              <a
+                                href={site}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center px-4 py-2 text-[var(--text-blue-light)] text-sm font-medium rounded-lg hover:text-[var(--text-blue-dark)] transition-colors"
+                              >
+                                Ver proyecto
+                                <svg
+                                  class="ml-2 w-4 h-4"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                  />
+                                </svg>
+                              </a>
+                            )}
+                            {git && (
+                              <a
+                                href={git}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center px-4 py-2 text-[var(--text-blue-light)] text-sm font-medium hover:text-[var(--text-blue-light)] transition-colors"
+                              >
+                                Repositorio
+                                {/* <svg
+                                  class="ml-2 w-4 h-4"
+                                  fill="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path d="M12 0C5.37 0 0 5.37 0 12 0 17.31 3.435 21.795 8.205 23.385 8.805 23.49 9.03 23.13 9.03 22.815 9.03 22.53 9.015 21.585 9.015 20.475 5.67 21.135 4.965 18.795 4.965 18.795 4.425 17.475 3.63 17.115 3.63 17.115 2.55 16.425 3.705 16.44 3.705 16.44 4.815 16.665 5.445 17.79 5.445 17.79 6.495 19.455 8.175 18.915 9.075 18.585 9.18 17.79 9.495 17.25 9.84 16.92 7.17 16.59 4.38 15.555 4.38 11.07 4.38 9.795 4.845 8.76 6.045 8.76 6.045 7.005 5.985 4.005 7.695 4.005 7.695 5.265 3.825 7.035 3.825 7.035 8.55 3.93 10.725 3.93 12.84 4.905 13.005 6.135 13.23 7.515 13.275 8.73 13.275 10.695 13.125 12 13.125 17.385 18.435 21.795 12 21.795 5.37 21.795 0 16.425 0 12Z" />
+                                </svg> */}
+                              </a>
+                            )}
                           </div>
                         </div>
                       </div>
                     );
-                  })
-                }
+                  })}
               </div>
             </div>
           ))}
         </div>
 
-        <!-- Mensaje cuando no hay resultados -->
+        {/* Mensaje cuando no hay resultados */}
         <div id="modalNoResults" class="text-center py-12 hidden">
           <div class="text-gray-400 text-6xl mb-4">
             <i class="fa-solid fa-search"></i>
           </div>
-          <h3 class="text-xl font-semibold text-gray-700 mb-2">No se encontraron proyectos</h3>
-          <p class="text-gray-500">Intenta con otros términos de búsqueda o filtros</p>
+          <h3 class="text-xl font-semibold text-gray-700 mb-2">
+            No se encontraron proyectos
+          </h3>
+          <p class="text-gray-500">
+            Intenta con otros términos de búsqueda o filtros
+          </p>
         </div>
       </div>
     </div>
   </div>
+
   
   <Footer />
 </Layout>
