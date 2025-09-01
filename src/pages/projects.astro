@@ -234,9 +234,61 @@ const years = Array.from(
       No se encontró ningún proyecto
     </p>
   </section>
-  <section>
-    h2
-  </section>
+    <section class="max-w-6xl mx-auto mt-4">
+        <!-- Header -->
+        <h1 class="text-[var(--text-blue-light)] text-xl font-semibold mb-8 tracking-wide">
+            NUESTRO ÁLBUM DE FOTOS
+        </h1>
+        
+        <!-- Photo Grid -->
+        <div class="grid grid-cols-12 grid-rows-8 gap-4 h-96 relative">
+            <!-- Large left photo -->
+            <div class="col-span-6 row-span-8 relative overflow-hidden">
+                <img 
+                    src="/projects-home-1.png"
+                    alt="Dos personas trabajando en laptop"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+            
+            <!-- Top right photo -->
+            <div class="col-span-3 row-span-8 relative overflow-hidden">
+                <img 
+                    src="/projects-home-1.png"
+                    alt="Persona programando con múltiples pantallas"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+            
+            <!-- Middle right photo -->
+            <div class="col-span-3 row-span-4 relative overflow-hidden">
+                <img 
+                    src="/projects-home-1.png"
+                    alt="Manos escribiendo código en laptop"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+            
+            <!-- Bottom right photo -->
+            <div class="col-span-3 row-span-4 relative overflow-hidden">
+                <img 
+                    src="/projects-home-1.png"
+                    alt="Código en pantalla oscura"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+        </div>
+        
+        <!-- View All Link -->
+        <div class="flex justify-end mt-6">
+            <a href="#" class="text-white text-sm font-medium flex items-center gap-2 hover:scale-105 transition-colors">
+                VER TODAS
+                <svg class="w-4 h-4 rotate-310 hover:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+            </a>
+        </div>
+    </section>
 
   <!-- Modal para mostrar todos los proyectos -->
   <div
