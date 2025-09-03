@@ -31,7 +31,7 @@ const projects = await getCollection('projects')
     
     <div class="hidden md:flex items-center space-x-2 md:order-3">
         <ul class="list-none flex items-center space-x-2">
-            <li><a href="" class="text-xl hover:underline">ACERCA DE</a></li>
+            <li><a href="/acerca" class="text-xl hover:underline">ACERCA DE</a></li>
             <li class="text-xl">/</li>
             <span class="text-xl">PROYECTOS({projects.length})</span>
         </ul>
@@ -45,7 +45,7 @@ const projects = await getCollection('projects')
             <ul class="space-y-6 text-center">
                 <li><a href="/projects" class="block text-xl hover:underline transition-colors">PROYECTOS</a></li>
                 <li><a href="" class="block text-xl hover:underline transition-colors">BLOG</a></li>
-                <li><a href="" class="block text-xl hover:underline transition-colors">ACERCA DE</a></li>
+                <li><a href="/acerca" class="block text-xl hover:underline transition-colors">ACERCA DE</a></li>
                 <li><span class="block text-xl text-gray-300">PROYECTOS({projects.length})</span></li>
             </ul>
         </nav>
