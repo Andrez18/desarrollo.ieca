@@ -1,315 +1,609 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+
+const images = [
+    {
+        url: "/slider-1.png",
+        alt: "Primera imagen del slider",
+    },
+    {
+        url: "/slider-2.png",
+        alt: "Segunda imagen del slider",
+    },
+    {
+        url: "/slider-3.png",
+        alt: "Tercera imagen del slider",
+    },
+    {
+        url: "/slider-4.png",
+        alt: "Cuarta imagen del slider",
+    },
+    {
+        url: "/slider-5.png",
+        alt: "Quinta imagen del slider",
+    },
+];
 ---
 
 <Layout title="Inicio - Desarrollo IECA">
-	<section class="relative min-h-screen bg-cover bg-center bg-no-repeat" 
-		style="background-image: url('/desarrollo-home.png');">
-		 
-		<div class="absolute inset-0 bg-opacity-70 pointer-events-none"></div>
-		<Header class="relative z-10" />
-		
-		<div class="relative z-10 px-4 sm:px-6 lg:px-12 py-8 sm:py-12 max-w-7xl mx-auto text-[var(--text-light)]">
-			<div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-				<!-- Columna izquierda -->
-				<div class="space-y-6 sm:space-y-8">
-					<div>
-						<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3 leading-tight" id="home">
-							DESARROLLANDO CALIDAD
-						</h1>
-						
-						<p class="text-[var(--text-blue-dark)] text-sm sm:text-base lg:text-[18px] uppercase tracking-[1px] sm:tracking-[2px] mb-12 sm:mb-24 lg:mb-[280px] leading-relaxed text-balance">
-							ENFOCADOS EN EL DESARROLLO Y LA EDUCACIÓN CON CALIDAD
-						</p>
-						
-						<p class="text-[var(text-light)] text-sm sm:text-[15px] leading-relaxed max-w-md font-regular">
-							Estudiar desarrollo de software no es solo aprender a programar, 
-							se construye un camino, crear sus propuestas y nunca olvidar el 
-							poder de lo que te hace único en este mundo digital.
-						</p>
-					</div>
-				</div>
+    <section
+        class="relative min-h-screen bg-cover bg-center bg-no-repeat"
+        style="background-image: url('/desarrollo-home.png');"
+    >
+        <div class="absolute inset-0 bg-opacity-70 pointer-events-none"></div>
+        <Header class="relative z-10" />
 
-				<!-- Columna derecha -->
-				<div class="space-y-8 sm:space-y-12">
-					<!-- Año y reloj -->
-					<div class="text-center lg:text-right">
-						<div class="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-medium text[var(--text-light)] tracking-[-3px] sm:tracking-[-7px]">
-							<span id="year"></span>
-						</div>
-						<p id="clock" class="text-lg sm:text-[20px] text-[var(--text-blue-dark)] mt-4 sm:mt-[25px]"></p>
-					</div>
+        <div
+            class="relative z-10 px-4 sm:px-6 lg:px-12 py-8 sm:py-12 max-w-7xl mx-auto text-[var(--text-light)]"
+        >
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                <div class="space-y-6 sm:space-y-8">
+                    <div>
+                        <h1
+                            class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3 leading-tight"
+                            id="home"
+                        >
+                            DESARROLLANDO CALIDAD
+                        </h1>
 
-					<!-- Card del blog -->
-					<div class="bg-white text-black rounded-lg p-4 sm:p-6 mx-auto lg:ml-auto lg:mr-0 max-w-sm mt-8 sm:mt-12 lg:mt-[200px]">
-						<h3 class="text-lg sm:text-xl font-bold mb-2">BLOG</h3>
-						<p class="text-xs sm:text-sm text-[#373733] mb-4 text-balance">
-							Descubre de los últimos noticias relacionados con la media técnica
-						</p>
-						<button class="bg-[#131313] text-[var(--text-light)] px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm transition-colors flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start">
-							VER AHORA
-							<svg class="w-6 h-6 sm:w-8 sm:h-8 p-1 sm:p-2 rounded-full bg-[var(--text-blue-light)] hover:ml-1.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-							</svg>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                        <p
+                            class="text-[var(--text-blue-dark)] text-sm sm:text-base lg:text-[18px] uppercase tracking-[1px] sm:tracking-[2px] mb-12 sm:mb-24 lg:mb-[280px] leading-relaxed text-balance"
+                        >
+                            ENFOCADOS EN EL DESARROLLO Y LA EDUCACIÓN CON
+                            CALIDAD
+                        </p>
 
-	<section class="relative min-h-screen bg-black text-[var(--text-light)] overflow-hidden">
-		<div class="absolute inset-0  bottom-85 flex items-center justify-center pointer-events-none">
-			<h2 class="text-6xl sm:text-7xl md:text-8xl lg:text-[128px] font-bowlbyOne font-bold text-[var(--background-light)] select-none leading-none text-center">
-				PROYECTOS
-			</h2>
-		</div>
+                        <p
+                            class="text-[var(text-light)] text-sm sm:text-[15px] leading-relaxed max-w-md font-regular"
+                        >
+                            Estudiar desarrollo de software no es solo aprender
+                            a programar, se construye un camino, crear sus
+                            propuestas y nunca olvidar el poder de lo que te
+                            hace único en este mundo digital.
+                        </p>
+                    </div>
+                </div>
 
-		<div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-			<h3 class="text-6xl sm:text-7xl md:text-8xl lg:text-[128px] font-bowlbyOne font-bold text-[var(--background-light)] select-none leading-none whitespace-nowrap">
-				DESTACADOS
-			</h3>
-		</div>
+                <div class="space-y-8 sm:space-y-12">
+                    <div class="text-center lg:text-right">
+                        <div
+                            class="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-medium text[var(--text-light)] tracking-[-3px] sm:tracking-[-7px]"
+                        >
+                            <span id="year"></span>
+                        </div>
+                        <p
+                            id="clock"
+                            class="text-lg sm:text-[20px] text-[var(--text-blue-dark)] mt-4 sm:mt-[25px]"
+                        >
+                        </p>
+                    </div>
 
-		<div class="relative z-10 px-4 sm:px-6 lg:px-12 py-8 sm:py-12 max-w-7xl mx-auto">
-			<div class="grid lg:grid-cols-2 gap-8 lg:gap-12 min-h-screen">
-				<div class="flex flex-col justify-between order-2 lg:order-1">
-					<div class="space-y-6 mt-8 sm:mt-16 lg:mt-48">
-						<div>
-							<h3 class="text-[var(--text-blue-dark)] text-xs sm:text-sm font-medium mb-4 tracking-wider">• SOBRE ESTE</h3>
-							<p class="text-gray-300 text-sm leading-relaxed max-w-sm lg:max-w-[294px] font-medium">
-								Desarrollo de un sitio web acerca de la media técnica de la misma institución.
-							</p>
-						</div>
-					</div>
-					
-					<div class="pb-8 mt-8 lg:mt-0">
-						<h4 class="text-[var(--text-blue-dark)] text-xs sm:text-sm font-medium mb-4 tracking-wider">/ ÚLTIMO PROYECTO 2025</h4>
-						<p class="text-gray-300 text-sm leading-relaxed mb-6 max-w-md">
-							Se desarrolló un sitio web para obtener información más a la mano sobre la Media Técnica para
-							demostrar con el mismo sitio web lo que se construye dentro de la misma, accediendo a información
-							relevante como los módulos y algunos proyectos realizados.
-						</p>
-						<a
-							href="#"
-							class="inline-flex items-center text-[var(--text-light)] text-sm font-medium hover:text-[var(--text-blue-light)] transition-colors group"
-						>
-							IR A LOS PROYECTOS
-							<svg
-								class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-							</svg>
-						</a>
-					</div>
-				</div>
+                    <div
+                        class="bg-white text-black rounded-lg p-4 sm:p-6 mx-auto lg:ml-auto lg:mr-0 max-w-sm mt-8 sm:mt-12 lg:mt-[200px]"
+                    >
+                        <h3 class="text-lg sm:text-xl font-bold mb-2">BLOG</h3>
+                        <p
+                            class="text-xs sm:text-sm text-[#373733] mb-4 text-balance"
+                        >
+                            Descubre de los últimos noticias relacionados con la
+                            media técnica
+                        </p>
+                        <button
+                            class="bg-[#131313] text-[var(--text-light)] px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm transition-colors flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start"
+                        >
+                            VER AHORA
+                            <svg
+                                class="w-6 h-6 sm:w-8 sm:h-8 p-1 sm:p-2 rounded-full bg-[var(--text-blue-light)] hover:ml-1.5 transition-all"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<div class="flex flex-col justify-center space-y-6 sm:space-y-8 order-1 lg:order-2">
-					<div class="pt-4 sm:pt-8">
-						<h2 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-semibold leading-tight mb-8 sm:mb-12">
-							<span class="text-[var(--text-grey-light)] text-lg sm:text-xl lg:text-2xl text-center align-middle mr-4 sm:mr-8 lg:mr-12">/ 01</span>
-							ENTRAR A LA MEDIA TÉCNICA ES MÁS QUE SOLO UN TÍTULO.
-						</h2>
-					</div>
+    <section
+        class="relative min-h-screen bg-black text-[var(--text-light)] overflow-hidden"
+    >
+        <div
+            class="absolute inset-0 bottom-85 flex items-center justify-center pointer-events-none"
+        >
+            <h2
+                class="text-6xl sm:text-7xl md:text-8xl lg:text-[128px] font-bowlbyOne font-bold text-[var(--background-light)] select-none leading-none text-center"
+            >
+                PROYECTOS
+            </h2>
+        </div>
 
-					<div class="flex flex-row gap-7 justify-center items-center">
-						<div class="relative flex justify-center lg:justify-start">
-							<img
-								src="/projects-home-1.png"
-								alt="Colaboración en oficina moderna"
-								class="w-full max-w-[362px] h-[240px] sm:h-[300px] lg:h-[360px] object-cover rounded-lg"
-							/>
-						</div>
+        <div
+            class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden"
+        >
+            <h3
+                class="text-6xl sm:text-7xl md:text-8xl lg:text-[128px] font-bowlbyOne font-bold text-[var(--background-light)] select-none leading-none whitespace-nowrap"
+            >
+                DESTACADOS
+            </h3>
+        </div>
 
-						<div class="relative flex justify-center lg:justify-start">
-							<div class="flex flex-col sm:flex-row items-center sm:items-end space-y-4 sm:space-y-0 sm:space-x-4">
-								<img
-									src="/projects-home-2.png"
-									alt="Manos escribiendo en teclado"
-									class="w-full max-w-[362px] h-[150px] sm:h-[195px] object-cover rounded-lg"
-								/>
-							</div>
-						</div>
-					</div>
-					<div class="text-center sm:text-right space-y-2 flex-shrink-0">
-						<div class="text-gray-400 text-xs tracking-wider">
-							WEB<br />
-							MEDIA TÉCNICA<br />
-							<span class="font-bold">DESARROLLO</span>
-						</div>
-						<div class="text-[var(--text-blue-dark)] text-xl sm:text-2xl font-bold">2025</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        <div
+            class="relative z-10 px-4 sm:px-6 lg:px-12 py-8 sm:py-12 max-w-7xl mx-auto"
+        >
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 min-h-screen">
+                <div class="flex flex-col justify-between order-2 lg:order-1">
+                    <div class="space-y-6 mt-8 sm:mt-16 lg:mt-48">
+                        <div>
+                            <h3
+                                class="text-[var(--text-blue-dark)] text-xs sm:text-sm font-medium mb-4 tracking-wider"
+                            >
+                                • SOBRE ESTE
+                            </h3>
+                            <p
+                                class="text-gray-300 text-sm leading-relaxed max-w-sm lg:max-w-[294px] font-medium"
+                            >
+                                Desarrollo de un sitio web acerca de la media
+                                técnica de la misma institución.
+                            </p>
+                        </div>
+                    </div>
 
-	<section class="bg-[#373733] min-h-screen">
-    	<div class="p-6">
-    	  <header class="flex justify-between items-center mb-4 px-2">
-    	    <p class="text-xs text-[#0a4f9a] font-semibold uppercase leading-none tracking-widest">
-    	      <span class="inline-block mr-1">•</span>Nuestra Calidad
-    	    </p>
-    	    <h2 class="text-white font-bold text-4xl leading-tight text-center">
-				REPRESENTADOS POR NUESTRA CALIDAD
-    	    </h2>
-    	    <div class="text-gray-400 font-light tracking-wide select-none">
-    	      / 02
-    	    </div>
-    	  </header>
-    	  <div class="relative flex flex-row justify-center">
-    	    <img
-    	      alt="Dos personas trabajando en un escritorio con una laptop y un monitor, mujer joven y hombre mayor con barba blanca"
-    	      class="max-w-[90%] object-cover"
-    	      height=""
-    	      src="/image-6.png"
-    	      width=""
-    	    />
-    	    <div class="absolute top-3 left-20 text-1xl text-gray-300 font-light leading-tight select-none max-w-[325px]">
-    	      Reconocidos por nuestra ardua labor en el mundo del desarrollo
-    	    </div>
-    	  </div>
-    	  <div class="flex justify-between items-start mt-10 px-2">
-    	    <div
-    	      class="text-sm text-gray-400 font-light max-w-[50%] leading-tight select-none flex flex-col gap-3	"
-    	    >
-    	      <a href="/modules" class="font-bold uppercase underline text-base hover:text-white">Ir a los módulos</a>
-			  <p>
-				  El lugar donde la calidad y la innovación se unen para crear
-				  experiencias únicas, impulsando ideas que transforman, inspiran y
-				  marcan la diferencia en cada proyecto que desarrollamos con pasión.
-			  </p>
-    	    </div>
-    	    <div
-    	      class="text-4xl text-white text-right max-w-[35%] leading-tight select-none"
-    	    >
-    	      CON LOS ESTÁNDARES MÁS ALTOS
-    	    </div>
-    	  </div>
-    	  <div class="flex justify-center align-center mt-6 px-2 text-xs">
-    	    <a
-			  href="https://www.ieciudadelalasamericas.edu.co/" target="_blank" rel="noopener noreferrer"
-    	      class="border border-gray-400 font-semibold uppercase tracking-widest py-2 px-6 w-[15%] hover:bg-gray-700 transition-colors text-center"
-    	    >
-    	      Ciudadela Las Américas
-    	    </a>
+                    <div class="pb-8 mt-8 lg:mt-0">
+                        <h4
+                            class="text-[var(--text-blue-dark)] text-xs sm:text-sm font-medium mb-4 tracking-wider"
+                        >
+                            / ÚLTIMO PROYECTO 2025
+                        </h4>
+                        <p
+                            class="text-gray-300 text-sm leading-relaxed mb-6 max-w-md"
+                        >
+                            Se desarrolló un sitio web para obtener información
+                            más a la mano sobre la Media Técnica para demostrar
+                            con el mismo sitio web lo que se construye dentro de
+                            la misma, accediendo a información relevante como
+                            los módulos y algunos proyectos realizados.
+                        </p>
+                        <a
+                            href="#"
+                            class="inline-flex items-center text-[var(--text-light)] text-sm font-medium hover:text-[var(--text-blue-light)] transition-colors group"
+                        >
+                            IR A LOS PROYECTOS
+                            <svg
+                                class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
-    	    <a
-			  href="https://pascualbravo.edu.co/" target="_blank" rel="noopener noreferrer"
-    	      class="border border-gray-400 font-semibold uppercase tracking-widest py-2 px-6 w-[15%] hover:bg-gray-700 transition-colors text-center"
-    	    >
-    	      Pascual Bravo
-    	    </a>
-    	  </div>
-    	</div>
-	</section>
+                <div
+                    class="flex flex-col justify-center space-y-6 sm:space-y-8 order-1 lg:order-2"
+                >
+                    <div class="pt-4 sm:pt-8">
+                        <h2
+                            class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-semibold leading-tight mb-8 sm:mb-12"
+                        >
+                            <span
+                                class="text-[var(--text-grey-light)] text-lg sm:text-xl lg:text-2xl text-center align-middle mr-4 sm:mr-8 lg:mr-12"
+                                >/ 01</span
+                            >
+                            ENTRAR A LA MEDIA TÉCNICA ES MÁS QUE SOLO UN TÍTULO.
+                        </h2>
+                    </div>
 
-	<section class="px-8 py-12 max-w-[1200px] mx-auto">
-		<header class="flex justify-between items-start mb-12">
-			<div class="flex flex-col space-x-3">
-				<div class="text-gray-400 font-light tracking-wide select-none">
-    	      		/ 03
-    	    	</div>
-				<span class="text-4xl">PARA</span>
-			</div>
-			<svg class="w-6 h-6 text-blue-700" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false" >
-				<path d="M12 2L14.09 8.26L21 9.27L16 14.14L17.18 21.02L12 17.77L6.82 21.02L8 14.14L3 9.27L9.91 8.26L12 2Z" />
-			</svg>
+                    <div
+                        class="flex flex-row gap-7 justify-center items-center"
+                    >
+                        <div
+                            class="relative flex justify-center lg:justify-start"
+                        >
+                            <img
+                                src="/projects-home-1.png"
+                                alt="Colaboración en oficina moderna"
+                                class="w-full max-w-[362px] h-[240px] sm:h-[300px] lg:h-[360px] object-cover rounded-lg"
+                            />
+                        </div>
 
-			<h2 class="text-2xl md:text-4xl font-bold max-w-xl leading-tight">
-				HABILIDADES ÚNICAS.<br>
-				UN FUTURO ASEGURADO.
-			</h2>
+                        <div
+                            class="relative flex justify-center lg:justify-start"
+                        >
+                            <div
+                                class="flex flex-col sm:flex-row items-center sm:items-end space-y-4 sm:space-y-0 sm:space-x-4"
+                            >
+                                <img
+                                    src="/projects-home-2.png"
+                                    alt="Manos escribiendo en teclado"
+                                    class="w-full max-w-[362px] h-[150px] sm:h-[195px] object-cover rounded-lg"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="text-center sm:text-right space-y-2 flex-shrink-0"
+                    >
+                        <div class="text-gray-400 text-xs tracking-wider">
+                            WEB<br />
+                            MEDIA TÉCNICA<br />
+                            <span class="font-bold">DESARROLLO</span>
+                        </div>
+                        <div
+                            class="text-[var(--text-blue-dark)] text-xl sm:text-2xl font-bold"
+                        >
+                            2025
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<div class="max-w-[175px] text-right">
-				<h2 class="font-semibold text-4xl mb-1">A MEDIDA</h2>
-				<p class="text-xs leading-snug text-[#6F706B]">
-					Forma parte de la técnica para graduarte con el título bachiller técnico
-				</p>
-			</div>
-		</header>
+    <section class="bg-[#373733] min-h-screen">
+        <div class="p-6">
+            <header class="flex justify-between items-center mb-4 px-2">
+                <p
+                    class="text-xs text-[#0a4f9a] font-semibold uppercase leading-none tracking-widest"
+                >
+                    <span class="inline-block mr-1">•</span>Nuestra Calidad
+                </p>
+                <h2
+                    class="text-white font-bold text-4xl leading-tight text-center"
+                >
+                    REPRESENTADOS POR NUESTRA CALIDAD
+                </h2>
+                <div class="text-gray-400 font-light tracking-wide select-none">
+                    / 02
+                </div>
+            </header>
+            <div class="relative flex flex-row justify-center">
+                <img
+                    alt="Dos personas trabajando en un escritorio con una laptop y un monitor, mujer joven y hombre mayor con barba blanca"
+                    class="max-w-[90%] object-cover"
+                    height=""
+                    src="/image-6.png"
+                    width=""
+                />
+                <div
+                    class="absolute top-3 left-20 text-1xl text-gray-300 font-light leading-tight select-none max-w-[325px]"
+                >
+                    Reconocidos por nuestra ardua labor en el mundo del
+                    desarrollo
+                </div>
+            </div>
+            <div class="flex justify-between items-start mt-10 px-2">
+                <div
+                    class="text-sm text-gray-400 font-light max-w-[50%] leading-tight select-none flex flex-col gap-3"
+                >
+                    <a
+                        href="/modules"
+                        class="font-bold uppercase underline text-base hover:text-white"
+                        >Ir a los módulos</a
+                    >
+                    <p>
+                        El lugar donde la calidad y la innovación se unen para
+                        crear experiencias únicas, impulsando ideas que
+                        transforman, inspiran y marcan la diferencia en cada
+                        proyecto que desarrollamos con pasión.
+                    </p>
+                </div>
+                <div
+                    class="text-4xl text-white text-right max-w-[35%] leading-tight select-none"
+                >
+                    CON LOS ESTÁNDARES MÁS ALTOS
+                </div>
+            </div>
+            <div class="flex justify-center align-center mt-6 px-2 text-xs">
+                <a
+                    href="https://www.ieciudadelalasamericas.edu.co/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="border border-gray-400 font-semibold uppercase tracking-widest py-2 px-6 w-[15%] hover:bg-gray-700 transition-colors text-center"
+                >
+                    Ciudadela Las Américas
+                </a>
 
-		<div class="md:flex md:space-x-12">
-			<img
-				src="/public/image-7.png"
-				alt="Personas trabajando en programación frente a computadoras"
-				loading="lazy"
-			/>
+                <a
+                    href="https://pascualbravo.edu.co/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="border border-gray-400 font-semibold uppercase tracking-widest py-2 px-6 w-[15%] hover:bg-gray-700 transition-colors text-center"
+                >
+                    Pascual Bravo
+                </a>
+            </div>
+        </div>
+    </section>
 
-			<article class="md:w-2/3 text-gray-300 space-y-6">
-				<p class="text-sm text-blue-700 font-semibold inline-block mb-2">
-					¿POR QUÉ ELEGIRNOS?
-				</p>
+    <section class="px-8 py-12 max-w-[1200px] mx-auto">
+        <header class="flex justify-between items-start mb-12">
+            <div class="flex flex-col space-x-3">
+                <div class="text-gray-400 font-light tracking-wide select-none">
+                    / 03
+                </div>
+                <span class="text-4xl">PARA</span>
+            </div>
+            <svg
+                class="w-6 h-6 text-blue-700"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+            >
+                <path
+                    d="M12 2L14.09 8.26L21 9.27L16 14.14L17.18 21.02L12 17.77L6.82 21.02L8 14.14L3 9.27L9.91 8.26L12 2Z"
+                ></path>
+            </svg>
 
-				<ol class="space-y-8 list-none">
-					<li class=" max-w-[70%]">
-						<h2 class="font-semibold text-3xl text-[#6F706B]">
-							<span class="text-[#373733] tracking-wide select-none font-normal text-[16px]">
-								/ 01
-							</span>
-							CONVENIO CON LA UNIVERSIDAD PASCUAL BRAVO
-						</h2>
-					</li>
+            <h2 class="text-2xl md:text-4xl font-bold max-w-xl leading-tight">
+                HABILIDADES ÚNICAS.<br />
+                UN FUTURO ASEGURADO.
+            </h2>
 
-					<hr class="text-[#232323]">
+            <div class="max-w-[175px] text-right">
+                <h2 class="font-semibold text-4xl mb-1">A MEDIDA</h2>
+                <p class="text-xs leading-snug text-[#6F706B]">
+                    Forma parte de la técnica para graduarte con el título
+                    bachiller técnico
+                </p>
+            </div>
+        </header>
 
-					<li class="max-w-[70%]">
-						<h2 class="font-semibold text-3xl">
-							<span class="text-[#373733] tracking-wide select-none font-normal text-[16px]">
-								/ 02
-							</span>
-							GRADÚATE COMO BACHILLER TÉCNICO
-						</h2>
-						<p class="text-sm leading-relaxed text-[#6F706B]">
-							Al estar en nuestra Media Técnica te graduarás como bachiller técnico en lugar de bachiller académico y encadenas directo con el pascual bravo para seguir tus sueños
-						</p>
-					</li>
+        <div class="md:flex md:space-x-12">
+            <img
+                src="/public/image-7.png"
+                alt="Personas trabajando en programación frente a computadoras"
+                loading="lazy"
+            />
 
-					<hr class="text-[#232323]">
+            <article class="md:w-2/3 text-gray-300 space-y-6">
+                <p
+                    class="text-sm text-blue-700 font-semibold inline-block mb-2"
+                >
+                    ¿POR QUÉ ELEGIRNOS?
+                </p>
 
-					<li class="max-w-[70%]">
-						<h2 class="font-semibold text-3xl text-[#6F706B]">
-							<span class="text-[#373733] tracking-wide select-none font-normal text-[16px]">
-								/ 03
-							</span>
-							LA OPORTUNIDAD DE TRABAJAR CON CONTRATOS INTERNACIONALES
-						</h2>
-					</li>
-				</ol>
+                <ol class="space-y-8 list-none">
+                    <li class="max-w-[70%]">
+                        <h2 class="font-semibold text-3xl text-[#6F706B]">
+                            <span
+                                class="text-[#373733] tracking-wide select-none font-normal text-[16px]"
+                            >
+                                / 01
+                            </span>
+                            CONVENIO CON LA UNIVERSIDAD PASCUAL BRAVO
+                        </h2>
+                    </li>
 
-				<hr class="text-[#232323]">
-			
-				<h3 class="text-7xl font-semibold text-[#0D0D0D] mt-12 select-none pointer-events-none leading-none">
-					ELÍGENOS AHORA
-				</h3>
-			</article>
-		</div>
-	</section>
+                    <hr class="text-[#232323]" />
 
-	<Footer />
+                    <li class="max-w-[70%]">
+                        <h2 class="font-semibold text-3xl">
+                            <span
+                                class="text-[#373733] tracking-wide select-none font-normal text-[16px]"
+                            >
+                                / 02
+                            </span>
+                            GRADÚATE COMO BACHILLER TÉCNICO
+                        </h2>
+                        <p class="text-sm leading-relaxed text-[#6F706B]">
+                            Al estar en nuestra Media Técnica te graduarás como
+                            bachiller técnico en lugar de bachiller académico y
+                            encadenas directo con el pascual bravo para seguir
+                            tus sueños
+                        </p>
+                    </li>
 
-	<script client:load>
-		function updateClock() {
-			const now = new Date();
+                    <hr class="text-[#232323]" />
 
-			const dias = ["DOM", "LUN", "MAR", "MIE", "JUE", "VIE", "SAB"];
-			const diaSemana = dias[now.getDay()];
-			const diaMes = now.getDate();
-			const horas = String(now.getHours()).padStart(2, "0");
-			const minutos = String(now.getMinutes()).padStart(2, "0");
-			const anio = now.getFullYear();
+                    <li class="max-w-[70%]">
+                        <h2 class="font-semibold text-3xl text-[#6F706B]">
+                            <span
+                                class="text-[#373733] tracking-wide select-none font-normal text-[16px]"
+                            >
+                                / 03
+                            </span>
+                            LA OPORTUNIDAD DE TRABAJAR CON CONTRATOS INTERNACIONALES
+                        </h2>
+                    </li>
+                </ol>
 
-			document.getElementById("year").innerText = anio;
-			document.getElementById("clock").innerText = 
-				`${diaSemana} ${diaMes} \\ ${horas}:${minutos}`;
-		}
+                <hr class="text-[#232323]" />
 
-		updateClock();
-		setInterval(updateClock, 1000); 
-	</script>
+                <h3
+                    class="text-7xl font-semibold text-[#0D0D0D] mt-12 select-none pointer-events-none leading-none"
+                >
+                    ELÍGENOS AHORA
+                </h3>
+            </article>
+        </div>
+    </section>
+
+    <section class="slider-container bg-black py-16 overflow-hidden relative">
+        <button
+            id="prevBtn"
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 cursor-pointer hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
+            aria-label="Imagen anterior"
+        >
+            <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+
+        <button
+            id="nextBtn"
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 cursor-pointer hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
+            aria-label="Imagen siguiente"
+        >
+            <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+
+        <div class="slider-wrapper overflow-hidden">
+            <div
+                id="sliderTrack"
+                class="slider-track flex transition-transform duration-500 ease-in-out"
+            >
+                <div
+                    class="slide flex-shrink-0 mx-2 min-w-[320px] md:min-w-[280px] sm:min-w-[240px]"
+                >
+                    <img
+                        src={images[images.length - 1].url}
+                        alt={images[images.length - 1].alt}
+                        class="w-80 h-48 md:w-72 md:h-44 sm:w-60 sm:h-40 object-cover rounded-lg shadow-xl"
+                        loading="lazy"
+                    />
+                </div>
+
+                {
+                    images.map((image) => (
+                        <div class="slide flex-shrink-0 mx-2 min-w-[320px] md:min-w-[280px] sm:min-w-[240px]">
+                            <img
+                                src={image.url}
+                                alt={image.alt}
+                                class="w-80 h-48 md:w-72 md:h-44 sm:w-60 sm:h-40 object-cover rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                                loading="lazy"
+                            />
+                        </div>
+                    ))
+                }
+
+                <div
+                    class="slide flex-shrink-0 mx-2 min-w-[320px] md:min-w-[280px] sm:min-w-[240px]"
+                >
+                    <img
+                        src={images[0].url}
+                        alt={images[0].alt}
+                        class="w-80 h-48 md:w-72 md:h-44 sm:w-60 sm:h-40 object-cover rounded-lg shadow-xl"
+                        loading="lazy"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+
+    <script client:load>
+        function updateClock() {
+            const now = new Date();
+
+            const dias = ["DOM", "LUN", "MAR", "MIE", "JUE", "VIE", "SAB"];
+            const diaSemana = dias[now.getDay()];
+            const diaMes = now.getDate();
+            const horas = String(now.getHours()).padStart(2, "0");
+            const minutos = String(now.getMinutes()).padStart(2, "0");
+            const anio = now.getFullYear();
+
+            document.getElementById("year").innerText = anio;
+            document.getElementById("clock").innerText =
+                `${diaSemana} ${diaMes} \\ ${horas}:${minutos}`;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const sliderTrack = document.getElementById("sliderTrack");
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+            const slides = document.querySelectorAll(".slide");
+
+            let currentIndex = 1;
+            let slideWidth = slides[0].offsetWidth + 16 * 2;
+            sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+            function moveToIndex(index) {
+                sliderTrack.style.transition = "transform 0.5s ease-in-out";
+                currentIndex = index;
+                sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+
+            function nextSlide() {
+                if (currentIndex >= slides.length - 1) return;
+                moveToIndex(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                if (currentIndex <= 0) return;
+                moveToIndex(currentIndex - 1);
+            }
+
+            nextBtn.addEventListener("click", nextSlide);
+            prevBtn.addEventListener("click", prevSlide);
+
+            sliderTrack.addEventListener("transitionend", () => {
+                if (currentIndex === slides.length - 1) {
+                    sliderTrack.style.transition = "none";
+                    currentIndex = 1;
+                    sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+                }
+                if (currentIndex === 0) {
+                    sliderTrack.style.transition = "none";
+                    currentIndex = slides.length - 2;
+                    sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                slideWidth = slides[0].offsetWidth + 16 * 2;
+                sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            });
+
+            let startX = 0;
+            let endX = 0;
+
+            sliderTrack.addEventListener("touchstart", (e) => {
+                startX = e.touches[0].clientX;
+            });
+
+            sliderTrack.addEventListener("touchend", (e) => {
+                endX = e.changedTouches[0].clientX;
+                const diff = startX - endX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) nextSlide();
+                    else prevSlide();
+                }
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "ArrowLeft") prevSlide();
+                if (e.key === "ArrowRight") nextSlide();
+            });
+        });
+    </script>
 </Layout>
