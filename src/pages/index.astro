@@ -28,69 +28,62 @@ const images = [
 ---
 
 <Layout title="Inicio - Desarrollo IECA">
-    <section
-        class="relative min-h-screen bg-cover bg-center bg-no-repeat"
-        style="background-image: url('/desarrollo-home.png');"
-    >
-        <div class="absolute inset-0 bg-black/30"></div>
-        <Header class="relative z-20" />
+<section
+    class="relative min-h-screen bg-cover bg-center bg-no-repeat"
+    style="background-image: url('/desarrollo-home.png');"
+>
+    <div class="absolute inset-0 bg-black/30"></div>
+    <Header class="relative z-20" />
 
-        <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 text-[var(--text-light)]">
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start min-h-[calc(100vh-200px)]">
-                <!-- Left Column -->
-                <div class="flex flex-col justify-center space-y-6 lg:space-y-8">
-                    <div class="space-y-4 lg:space-y-6">
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-                            DESARROLLANDO CALIDAD
-                        </h1>
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 text-[var(--text-light)]">
+        <div class="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-start min-h-[calc(100vh-200px)]">
+            
+            <div class="order-1 flex flex-col justify-center space-y-4 sm:space-y-6 lg:space-y-8">
+                <div class="space-y-3 sm:space-y-4 lg:space-y-6">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight">
+                        DESARROLLANDO CALIDAD
+                    </h1>
 
-                        <p class="text-[var(--text-blue-dark)] text-sm sm:text-base lg:text-lg uppercase tracking-wide lg:tracking-wider font-medium max-w-lg">
-                            ENFOCADOS EN EL DESARROLLO Y LA EDUCACIÓN CON CALIDAD
+                    <p class="text-[var(--text-blue-dark)] text-xs sm:text-sm lg:text-base xl:text-lg uppercase tracking-wide lg:tracking-wider font-medium max-w-lg">
+                        NOS ENFOCADOS EN EL DESARROLLO Y LA EDUCACIÓN CON CALIDAD EN LA IECA    
+                    </p>
+
+                    <div class="mt-4 sm:mt-6 lg:mt-12 xl:mt-16">
+                        <p class="text-[var(text-light)] text-xs sm:text-sm lg:text-[15px] leading-relaxed max-w-md font-regular">
+                            Estudiar desarrollo de software en la IECA no es solo aprender
+                            a programar, se construye un camino, crear sus
+                            propuestas y nunca olvidar el poder de lo que te
+                            hace único en este mundo digital.
                         </p>
-
-                        <div class="lg:mt-12 xl:mt-16">
-                            <p class="text-[var(text-light)] text-sm sm:text-[15px] leading-relaxed max-w-md font-regular">
-                                Estudiar desarrollo de software no es solo aprender
-                                a programar, se construye un camino, crear sus
-                                propuestas y nunca olvidar el poder de lo que te
-                                hace único en este mundo digital.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column -->
-                <div class="flex flex-col justify-between h-full space-y-8">
-                    <!-- Clock Section -->
-                    <div class="text-center lg:text-right lg:mt-8">
-                        <div class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-medium text-[var(--text-light)] tracking-tight">
-                            <span id="year"></span>
-                        </div>
-                        <p id="clock" class="text-base sm:text-lg lg:text-xl text-[var(--text-blue-dark)] mt-2 sm:mt-4 font-medium">
-                        </p>
-                    </div>
-
-                    <!-- Blog Card -->
-                    <div class="bg-white/95 backdrop-blur-sm text-black rounded-2xl p-6 sm:p-8 mx-auto lg:ml-auto lg:mr-0 max-w-sm w-full shadow-2xl">
-                        <h3 class="text-lg sm:text-xl font-bold mb-3 text-gray-900">BLOG</h3>
-                        <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-                            Descubre las últimas noticias relacionadas con la
-                            media técnica
-                        </p>
-                        <button class="group bg-[#131313] text-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-3 w-full justify-center hover:bg-gray-800 hover:shadow-lg">
-                            VER AHORA
-                            <svg class="w-5 h-5 p-1 rounded-full bg-[var(--text-blue-light)] group-hover:translate-x-1 transition-transform duration-300"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
                     </div>
                 </div>
             </div>
+
+            <div class="order-2 flex flex-col-reverse lg:flex-col justify-between h-full space-y-6 sm:space-y-8 space-y-reverse lg:space-y-8 lg:space-y-reverse-0">
+                
+                <div class="bg-white/95 backdrop-blur-sm text-black rounded-2xl p-4 sm:p-6 lg:p-8 mx-auto lg:ml-auto lg:mr-0 max-w-sm w-full shadow-2xl">
+                    <h3 class="text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3 text-gray-900">BLOG</h3>
+                    <p class="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+                        Descubre las últimas noticias relacionadas con la
+                        Media Técnica en la ieca
+                    </p>
+                    <button class="group bg-[#131313] text-white px-4 sm:px-6 py-2 rounded-full text-sm sm:text-lg font-medium transition-all duration-300 flex items-center gap-3 w-full justify-center hover:opacity-95 hover:shadow-lg">
+                        VER AHORA
+                    </button>
+                </div>
+
+                <div class="text-center lg:text-right">
+                    <div class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-medium text-[var(--text-light)] tracking-tight">
+                        <span id="year"></span>
+                    </div>
+                    <p id="clock" class="text-sm sm:text-base lg:text-lg xl:text-xl text-[var(--text-blue-dark)] mt-1 sm:mt-2 lg:mt-4 font-medium">
+                    </p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section
         class="relative min-h-screen bg-black text-[var(--text-light)] overflow-hidden"
@@ -233,185 +226,140 @@ const images = [
         </div>
     </section>
 
-    <section class="bg-[#373733] min-h-screen">
-        <div class="p-6">
-            <header class="flex justify-between items-center mb-4 px-2">
-                <p
-                    class="text-xs text-[#0a4f9a] font-semibold uppercase leading-none tracking-widest"
-                >
-                    <span class="inline-block mr-1">•</span>Nuestra Calidad
-                </p>
-                <h2
-                    class="text-white font-bold text-4xl leading-tight text-center"
-                >
-                    REPRESENTADOS POR NUESTRA CALIDAD
-                </h2>
-                <div class="text-gray-400 font-light tracking-wide select-none">
-                    / 02
-                </div>
-            </header>
-            <div class="relative flex flex-row justify-center">
-                <img
-                    alt="Dos personas trabajando en un escritorio con una laptop y un monitor, mujer joven y hombre mayor con barba blanca"
-                    class="max-w-[90%] object-cover"
-                    height=""
-                    src="/image-6.png"
-                    width=""
-                />
-                <div
-                    class="absolute top-3 left-20 text-1xl text-gray-300 font-light leading-tight select-none max-w-[325px]"
-                >
-                    Reconocidos por nuestra ardua labor en el mundo del
-                    desarrollo
-                </div>
-            </div>
-            <div class="flex justify-between items-start mt-10 px-2">
-                <div
-                    class="text-sm text-gray-400 font-light max-w-[50%] leading-tight select-none flex flex-col gap-3"
-                >
-                    <a
-                        href="/modules"
-                        class="font-bold uppercase underline text-base hover:text-white"
-                        >Ir a los módulos</a
-                    >
-                    <p>
-                        El lugar donde la calidad y la innovación se unen para
-                        crear experiencias únicas, impulsando ideas que
-                        transforman, inspiran y marcan la diferencia en cada
-                        proyecto que desarrollamos con pasión.
-                    </p>
-                </div>
-                <div
-                    class="text-4xl text-white text-right max-w-[35%] leading-tight select-none"
-                >
-                    CON LOS ESTÁNDARES MÁS ALTOS
-                </div>
-            </div>
-            <div class="flex justify-center align-center mt-6 px-2 text-xs">
-                <a
-                    href="https://www.ieciudadelalasamericas.edu.co/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="border border-gray-400 font-semibold uppercase tracking-widest py-2 px-6 w-[15%] hover:bg-gray-700 transition-colors text-center"
-                >
-                    Ciudadela Las Américas
-                </a>
+<section class="bg-[#373733] min-h-screen">
+  <div class="p-4 sm:p-6">
+    <!-- Header -->
+    <header class="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-6 sm:mb-12 gap-3 sm:gap-0 px-2 text-center sm:text-left">
+      <p class="text-xs text-[#0a4f9a] font-semibold uppercase leading-none tracking-widest">
+        <span class="inline-block mr-1">•</span>Nuestra Calidad
+      </p>
+      <h2 class="text-white font-bold text-2xl sm:text-4xl leading-tight">
+        REPRESENTADOS POR NUESTRA CALIDAD
+      </h2>
+      <div class="text-gray-400 font-light tracking-wide select-none">
+        / 02
+      </div>
+    </header>
 
-                <a
-                    href="https://pascualbravo.edu.co/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="border border-gray-400 font-semibold uppercase tracking-widest py-2 px-6 w-[15%] hover:bg-gray-700 transition-colors text-center"
-                >
-                    Pascual Bravo
-                </a>
-            </div>
-        </div>
-    </section>
+    <div class="relative flex justify-center">
+      <img
+        alt="Dos personas trabajando en un escritorio"
+        class="w-full max-w-[90%] object-cover rounded-lg"
+        src="/image-6.png"
+      />
+      <div class="absolute top-3 left-6 sm:left-20 text-sm sm:text-base text-gray-300 font-light leading-tight select-none max-w-[250px] sm:max-w-[325px]">
+        Reconocidos por nuestra ardua labor en el mundo del desarrollo
+      </div>
+    </div>
 
-    <section class="px-8 py-12 max-w-[1200px] mx-auto">
-        <header class="flex justify-between items-start mb-12">
-            <div class="flex flex-col space-x-3">
-                <div class="text-gray-400 font-light tracking-wide select-none">
-                    / 03
-                </div>
-                <span class="text-4xl">PARA</span>
-            </div>
-            <svg
-                class="w-6 h-6 text-blue-700"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-            >
-                <path
-                    d="M12 2L14.09 8.26L21 9.27L16 14.14L17.18 21.02L12 17.77L6.82 21.02L8 14.14L3 9.27L9.91 8.26L12 2Z"
-                ></path>
-            </svg>
+    <div class="flex flex-col sm:flex-row justify-between items-center sm:items-start mt-8 sm:mt-10 px-2 gap-6">
+      <div class="text-sm text-gray-400 font-light max-w-full sm:max-w-[50%] leading-tight select-none flex flex-col gap-3">
+        <a href="/modules" class="font-bold uppercase underline text-base hover:text-white">
+          Ir a los módulos
+        </a>
+        <p>
+          El lugar donde la calidad y la innovación se unen para crear experiencias únicas, impulsando ideas que transforman, inspiran y marcan la diferencia en cada proyecto que desarrollamos con pasión.
+        </p>
+      </div>
+      <div class="text-2xl sm:text-4xl text-white text-center sm:text-right max-w-full sm:max-w-[35%] leading-tight select-none">
+        CON LOS ESTÁNDARES MÁS ALTOS
+      </div>
+    </div>
 
-            <h2 class="text-2xl md:text-4xl font-bold max-w-xl leading-tight">
-                HABILIDADES ÚNICAS.<br />
-                UN FUTURO ASEGURADO.
-            </h2>
+    <div class="flex flex-col sm:flex-row justify-center items-center mt-6 px-2 gap-4 text-xs">
+      <a
+        href="https://www.ieciudadelalasamericas.edu.co/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="border border-gray-400 font-semibold uppercase tracking-widest py-2 px-6 w-full sm:w-[40%] lg:w-[15%] hover:bg-gray-700 transition-colors text-center"
+      >
+        Ciudadela Las Américas
+      </a>
 
-            <div class="max-w-[175px] text-right">
-                <h2 class="font-semibold text-4xl mb-1">A MEDIDA</h2>
-                <p class="text-xs leading-snug text-[#6F706B]">
-                    Forma parte de la técnica para graduarte con el título
-                    bachiller técnico
-                </p>
-            </div>
-        </header>
+      <a
+        href="https://pascualbravo.edu.co/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="border border-gray-400 font-semibold uppercase tracking-widest py-2 px-6 w-full sm:w-[40%] lg:w-[15%] hover:bg-gray-700 transition-colors text-center"
+      >
+        Pascual Bravo
+      </a>
+    </div>
+  </div>
+</section>
 
-        <div class="md:flex md:space-x-12">
-            <img
-                src="/public/image-7.png"
-                alt="Personas trabajando en programación frente a computadoras"
-                loading="lazy"
-            />
+<section class="px-4 sm:px-8 py-12 max-w-[1200px] mx-auto">
+  <header class="flex flex-col md:flex-row justify-between items-center md:items-start mb-12 gap-6 md:gap-0 text-center md:text-left">
+    <div>
+      <div class="text-gray-400 font-light tracking-wide select-none">
+        / 03
+      </div>
+      <span class="text-3xl sm:text-4xl">PARA</span>
+    </div>
 
-            <article class="md:w-2/3 text-gray-300 space-y-6">
-                <p
-                    class="text-sm text-blue-700 font-semibold inline-block mb-2"
-                >
-                    ¿POR QUÉ ELEGIRNOS?
-                </p>
+    <svg class="w-6 h-6 text-blue-700 mx-auto md:mx-0" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2L14.09 8.26L21 9.27L16 14.14L17.18 21.02L12 17.77L6.82 21.02L8 14.14L3 9.27L9.91 8.26L12 2Z"></path>
+    </svg>
 
-                <ol class="space-y-8 list-none">
-                    <li class="max-w-[70%]">
-                        <h2 class="font-semibold text-3xl text-[#6F706B]">
-                            <span
-                                class="text-[#373733] tracking-wide select-none font-normal text-[16px]"
-                            >
-                                / 01
-                            </span>
-                            CONVENIO CON LA UNIVERSIDAD PASCUAL BRAVO
-                        </h2>
-                    </li>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold max-w-xl leading-tight">
+      HABILIDADES ÚNICAS.<br />UN FUTURO ASEGURADO.
+    </h2>
 
-                    <hr class="text-[#232323]" />
+    <div class="max-w-[175px] text-center md:text-right">
+      <h2 class="font-semibold text-2xl sm:text-4xl mb-1">A MEDIDA</h2>
+      <p class="text-xs leading-snug text-[#6F706B]">
+        Forma parte de la técnica para graduarte con el título bachiller técnico
+      </p>
+    </div>
+  </header>
 
-                    <li class="max-w-[70%]">
-                        <h2 class="font-semibold text-3xl">
-                            <span
-                                class="text-[#373733] tracking-wide select-none font-normal text-[16px]"
-                            >
-                                / 02
-                            </span>
-                            GRADÚATE COMO BACHILLER TÉCNICO
-                        </h2>
-                        <p class="text-sm leading-relaxed text-[#6F706B]">
-                            Al estar en nuestra Media Técnica te graduarás como
-                            bachiller técnico en lugar de bachiller académico y
-                            encadenas directo con el pascual bravo para seguir
-                            tus sueños
-                        </p>
-                    </li>
+  <div class="flex flex-col md:flex-row md:space-x-12 items-center md:items-start">
+    <img
+      src="/image-7.png"
+      alt="Personas trabajando en programación"
+      class="w-full max-w-md rounded-lg mb-6 md:mb-0"
+    />
 
-                    <hr class="text-[#232323]" />
+    <article class="md:w-2/3 text-gray-300 space-y-6">
+      <p class="text-sm text-blue-700 font-semibold inline-block mb-2">
+        ¿POR QUÉ ELEGIRNOS?
+      </p>
 
-                    <li class="max-w-[70%]">
-                        <h2 class="font-semibold text-3xl text-[#6F706B]">
-                            <span
-                                class="text-[#373733] tracking-wide select-none font-normal text-[16px]"
-                            >
-                                / 03
-                            </span>
-                            LA OPORTUNIDAD DE TRABAJAR CON CONTRATOS INTERNACIONALES
-                        </h2>
-                    </li>
-                </ol>
+      <ol class="space-y-8 list-none">
+        <li class="max-w-full md:max-w-[70%]">
+          <h2 class="font-semibold text-2xl sm:text-3xl text-[#6F706B]">
+            <span class="text-[#373733] text-sm">/ 01</span> CONVENIO CON LA UNIVERSIDAD PASCUAL BRAVO
+          </h2>
+        </li>
 
-                <hr class="text-[#232323]" />
+        <hr class="text-[#232323]" />
 
-                <h3
-                    class="text-7xl font-semibold text-[#0D0D0D] mt-12 select-none pointer-events-none leading-none"
-                >
-                    ELÍGENOS AHORA
-                </h3>
-            </article>
-        </div>
-    </section>
+        <li class="max-w-full md:max-w-[70%]">
+          <h2 class="font-semibold text-2xl sm:text-3xl">
+            <span class="text-[#373733] text-sm">/ 02</span> GRADÚATE COMO BACHILLER TÉCNICO
+          </h2>
+          <p class="text-sm leading-relaxed text-[#6F706B]">
+            Al estar en nuestra Media Técnica te graduarás como bachiller técnico en lugar de bachiller académico y encadenas directo con el pascual bravo para seguir tus sueños
+          </p>
+        </li>
+
+        <hr class="text-[#232323]" />
+
+        <li class="max-w-full md:max-w-[70%]">
+          <h2 class="font-semibold text-2xl sm:text-3xl text-[#6F706B]">
+            <span class="text-[#373733] text-sm">/ 03</span> LA OPORTUNIDAD DE TRABAJAR CON CONTRATOS INTERNACIONALES
+          </h2>
+        </li>
+      </ol>
+
+      <hr class="text-[#232323]" />
+
+      <h3 class="text-5xl sm:text-7xl font-semibold text-[#0D0D0D] mt-12 select-none leading-none">
+        ELÍGENOS AHORA
+      </h3>
+    </article>
+  </div>
+</section>
 
     <section class="slider-container bg-black py-16 overflow-hidden relative">
         <button
@@ -494,6 +442,7 @@ const images = [
             </div>
         </div>
     </section>
+
 
     <Footer />
 
