@@ -1,21 +1,253 @@
 ---
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Acerca de -  desarrollo IECA">
+<Layout title="Acerca de - desarrollo IECA">
   <Header />
-  <section class="min-h-screen px-4 sm:px-6 lg:px-8">
-    <header class="max-w-4xl mx-auto text-center py-40 flex flex-col items-center">
-        <h1 class="text-5xl font-medium max-w-[680px] text-[#e4e2e5]">Descrubre todo <br>acerca de la Media Técnica</h1>
-        <p class="max-w-[620px] text-[20px] font-light mt-4 text-[#738088]">Conoce la Media Técnica en desarrollo de software, desde sus módulos hasta la información esencial.</p>
-        <a href="" class="bg-[var(--text-light)] text-[var(--text-dark)] text-lg py-2 px-4 rounded-3xl hover:shadow-[0_0_12px_4px_#fff3] mt-8">Ver ahora</a>
+
+  <main class="min-h-screen mx-auto px-6 max-w-6xl">
+    <!-- Encabezado principal -->
+    <header
+      class="flex flex-col items-center justify-center text-center px-4 my-28"
+    >
+      <h1 class="text-6xl md:text-8xl font-semibold mb-6 tracking-tight">
+        ACERCA DE
+      </h1>
+      <p class="text-gray-300 text-xl max-w-2xl leading-relaxed">
+        Conoce todo acerca de lo que vaya en la Media Técnica en desarrollo de
+        software, desde los módulos hasta la información más importante.
+      </p>
     </header>
-  </section>
-  <section>
-    
-  </section>
+
+    <!-- Sección Historia -->
+    <section class="py-16 border-b border-gray-800">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Columna izquierda -->
+        <article>
+        <div class="flex items-center gap-4 mb-8">
+            <span class="text-gray-500 text-sm font-mono">/ 01</span>
+            <h2 class="text-4xl lg:text-5xl font-bold leading-tight">
+            NUESTRA<br />HISTORIA
+            </h2>
+        </div>
+
+        <p id="historia" class="text-gray-300 text-lg leading-relaxed">
+            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año... 
+            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año...
+            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año...
+            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año...
+            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año...
+            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año
+        </p>
+        </article>
+
+        <!-- Columna derecha -->
+        <figure class="flex flex-col items-end">
+        <img
+            src="/dev-two.png"
+            alt="Estudiantes en reunión de presentación"
+            class="w-full max-w-md rounded-lg mb-4"
+        />
+        <figcaption>
+            <a
+            id="toggleHistoria"
+            class="flex items-center gap-2 cursor-pointer hover:text-gray-300 transition-colors"
+            >
+            <span id="toggleText" class="text-gray-400 text-sm">Ver todo</span>
+            <svg
+                class="w-4 h-4 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+                />
+            </svg>
+            </a>
+        </figcaption>
+        </figure>
+    </div>
+    </section>
+
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 py-16">
+  <!-- Columna izquierda -->
+  <article class="space-y-12">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="text-gray-500 text-sm font-mono">/ 02</span>
+      <h2 class="text-3xl font-bold">NUESTROS</h2>
+    </div>
+
+    <nav class="flex gap-4 mb-6" aria-label="Información por grados">
+      <button
+        id="btn-decimo"
+        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+      >
+        Info Décimo
+      </button>
+      <button
+        id="btn-undecimo"
+        class="border border-gray-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors bg-transparent"
+      >
+        Info Undécimo
+      </button>
+    </nav>
+
+    <p id="grado-info" class="text-gray-300 leading-relaxed">
+      En décimo iniciamos a familiarizarnos con el mundo del desarrollo de
+      software, también iniciamos a reforzar nuestro pensamiento lógico.
+    </p>
+  </article>
+
+  <!-- Columna derecha -->
+  <article>
+    <h2 class="text-4xl font-bold mb-8">MÓDULOS</h2>
+    <div
+      id="modulos"
+      class="space-y-6 max-h-[300px] overflow-y-auto pr-4"
+    >
+      <!-- Aquí se cargan los módulos dinámicamente -->
+    </div>
+  </article>
+</section>
+  </main>
+
   <Footer />
 </Layout>
+
+<script>
+  const historiaEl = document.getElementById("historia");
+  const toggleBtn = document.getElementById("toggleHistoria");
+  const toggleText = document.getElementById("toggleText");
+
+  const fullText = historiaEl.innerText.trim();
+  const words = fullText.split(/\s+/);
+  const shortText = words.slice(0, 60).join(" ") + (words.length > 60 ? "..." : "");
+
+  let isExpanded = false;
+
+  // Mostrar versión corta al inicio
+  if (words.length > 100) {
+    historiaEl.innerText = shortText;
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    if (isExpanded) {
+      historiaEl.innerText = shortText;
+      toggleText.innerText = "Ver todo";
+    } else {
+      historiaEl.innerText = fullText;
+      toggleText.innerText = "Ver menos";
+    }
+    isExpanded = !isExpanded;
+  });
+
+  //---------------------
+  const gradoInfo = document.getElementById("grado-info");
+  const modulosContainer = document.getElementById("modulos");
+
+  const btnDecimo = document.getElementById("btn-decimo");
+  const btnUndecimo = document.getElementById("btn-undecimo");
+
+  // Contenido de cada grado
+  const data = {
+    decimo: {
+      info: "En décimo iniciamos a familiarizarnos con el mundo del desarrollo de software, también iniciamos a reforzar nuestro pensamiento lógico.",
+      modulos: [
+        {
+          titulo: "MATEMÁTICAS DISCRETAS",
+          desc: "Introducción a estructuras matemáticas y pensamiento lógico aplicado al desarrollo de software."
+        },
+        {
+          titulo: "PROGRAMACIÓN",
+          desc: "Aprendemos los fundamentos de la programación y desarrollamos habilidades en diferentes lenguajes."
+        },
+        {
+          titulo: "BASE DE DATOS",
+          desc: "Estudiamos el diseño, implementación y gestión de bases de datos para aplicaciones de software."
+        },
+        {
+          titulo: "PRÓXIMO MÓDULO",
+          desc: "Descripción del siguiente módulo en el programa académico.",
+          inactive: true
+        }
+      ]
+    },
+    undecimo: {
+      info: "En undécimo profundizamos en el desarrollo de software, abordamos proyectos más complejos y nos preparamos para la educación superior o el ámbito laboral.",
+      modulos: [
+        {
+          titulo: "DESARROLLO WEB",
+          desc: "Diseño y construcción de aplicaciones web con HTML, CSS y JavaScript."
+        },
+        {
+          titulo: "INGENIERÍA DE SOFTWARE",
+          desc: "Aprendemos metodologías de desarrollo, análisis de requisitos y buenas prácticas."
+        },
+        {
+          titulo: "SEGURIDAD INFORMÁTICA",
+          desc: "Introducción a conceptos de seguridad, buenas prácticas y protección de datos."
+        },
+        {
+          titulo: "PROYECTO FINAL",
+          desc: "Aplicación práctica integradora que demuestra las competencias adquiridas."
+        },
+        {
+          titulo: "PROYECTO FINAL",
+          desc: "Aplicación práctica integradora que demuestra las competencias adquiridas."
+        }
+      ]
+    }
+  };
+
+  // Función para renderizar módulos
+  function renderModulos(modulos) {
+    modulosContainer.innerHTML = "";
+    modulos.forEach((mod) => {
+      const section = document.createElement("section");
+      section.className = `border-l-2 border-gray-600 pl-6 ${mod.inactive ? "opacity-50" : ""}`;
+      section.innerHTML = `
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-gray-500 text-sm font-mono">/</span>
+          <h3 class="text-xl font-semibold">${mod.titulo}</h3>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          ${mod.desc}
+        </p>
+      `;
+      modulosContainer.appendChild(section);
+    });
+  }
+
+  // Inicializar con décimo
+  renderModulos(data.decimo.modulos);
+
+  // Eventos
+  btnDecimo.addEventListener("click", () => {
+    gradoInfo.innerText = data.decimo.info;
+    renderModulos(data.decimo.modulos);
+
+    btnDecimo.classList.add("bg-white", "text-black");
+    btnDecimo.classList.remove("border", "border-gray-600", "bg-transparent", "text-white");
+
+    btnUndecimo.classList.add("border", "border-gray-600", "bg-transparent", "text-white");
+    btnUndecimo.classList.remove("bg-white", "text-black");
+  });
+
+  btnUndecimo.addEventListener("click", () => {
+    gradoInfo.innerText = data.undecimo.info;
+    renderModulos(data.undecimo.modulos);
+
+    btnUndecimo.classList.add("bg-white", "text-black");
+    btnUndecimo.classList.remove("border", "border-gray-600", "bg-transparent", "text-white");
+
+    btnDecimo.classList.add("border", "border-gray-600", "bg-transparent", "text-white");
+    btnDecimo.classList.remove("bg-white", "text-black");
+  });
+</script>
