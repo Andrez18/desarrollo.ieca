@@ -7,9 +7,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Acerca de - desarrollo IECA">
   <Header />
-
   <main class="min-h-screen mx-auto px-6 max-w-6xl">
-    <!-- Encabezado principal -->
     <header
       class="flex flex-col items-center justify-center text-center px-4 my-28"
     >
@@ -22,101 +20,101 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </header>
 
-    <!-- Sección Historia -->
     <section class="py-16 border-b border-gray-800">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Columna izquierda -->
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+      >
         <article>
-        <div class="flex items-center gap-4 mb-8">
+          <div class="flex items-center gap-4 mb-8">
             <span class="text-gray-500 text-sm font-mono">/ 01</span>
             <h2 class="text-4xl lg:text-5xl font-bold leading-tight">
-            NUESTRA<br />HISTORIA
+              NUESTRA<br />HISTORIA
             </h2>
-        </div>
+          </div>
 
-        <p id="historia" class="text-gray-300 text-lg leading-relaxed">
-            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año... 
-            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año...
-            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año...
-            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año...
-            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año...
-            El día 20 de febrero se le presentó los docentes por parte del pascual bravo que acompañaran a los estudiantes por el resto del año
-        </p>
+          <p id="historia" class="text-gray-300 text-lg leading-relaxed">
+            El día 20 de febrero se le presentó los docentes por parte del
+            pascual bravo que acompañaran a los estudiantes por el resto del
+            año... El día 20 de febrero se le presentó los docentes por parte
+            del pascual bravo que acompañaran a los estudiantes por el resto del
+            año... El día 20 de febrero se le presentó los docentes por parte
+            del pascual bravo que acompañaran a los estudiantes por el resto del
+            año... El día 20 de febrero se le presentó los docentes por parte
+            del pascual bravo que acompañaran a los estudiantes por el resto del
+            año... El día 20 de febrero se le presentó los docentes por parte
+            del pascual bravo que acompañaran a los estudiantes por el resto del
+            año... El día 20 de febrero se le presentó los docentes por parte
+            del pascual bravo que acompañaran a los estudiantes por el resto del
+            año
+          </p>
         </article>
 
-        <!-- Columna derecha -->
         <figure class="flex flex-col items-end">
-        <img
+          <img
             src="/dev-two.png"
             alt="Estudiantes en reunión de presentación"
             class="w-full max-w-md rounded-lg mb-4"
-        />
-        <figcaption>
+          />
+          <figcaption>
             <a
-            id="toggleHistoria"
-            class="flex items-center gap-2 cursor-pointer hover:text-gray-300 transition-colors"
+              id="toggleHistoria"
+              class="flex items-center gap-2 cursor-pointer hover:text-gray-300 transition-colors"
             >
-            <span id="toggleText" class="text-gray-400 text-sm">Ver todo</span>
-            <svg
+              <span id="toggleText" class="text-gray-400 text-sm">Ver todo</span
+              >
+              <svg
                 class="w-4 h-4 text-gray-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-            >
+              >
                 <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-                />
-            </svg>
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
             </a>
-        </figcaption>
+          </figcaption>
         </figure>
-    </div>
+      </div>
     </section>
 
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 py-16">
-  <!-- Columna izquierda -->
-  <article class="space-y-12">
-    <div class="flex items-center gap-4 mb-6">
-      <span class="text-gray-500 text-sm font-mono">/ 02</span>
-      <h2 class="text-3xl font-bold">NUESTROS</h2>
-    </div>
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 py-16">
+      <article class="space-y-12">
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-gray-500 text-sm font-mono">/ 02</span>
+          <h2 class="text-3xl font-bold">NUESTROS</h2>
+        </div>
 
-    <nav class="flex gap-4 mb-6" aria-label="Información por grados">
-      <button
-        id="btn-decimo"
-        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:scale-105 transition-colors"
-      >
-        Información <br/> Décimo
-      </button>
-      <button
-        id="btn-undecimo"
-        class="border border-gray-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:scale-105 transition-colors bg-transparent"
-      >
-        Información <br/> Undécimo
-      </button>
-    </nav>
+        <nav class="flex gap-4 mb-6" aria-label="Información por grados">
+          <button
+            id="btn-decimo"
+            class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:scale-105 transition-colors"
+          >
+            Información <br /> Décimo
+          </button>
+          <button
+            id="btn-undecimo"
+            class="border border-gray-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:scale-105 transition-colors bg-transparent"
+          >
+            Información <br /> Undécimo
+          </button>
+        </nav>
 
-    <p id="grado-info" class="text-gray-300 leading-relaxed">
-      En décimo iniciamos a familiarizarnos con el mundo del desarrollo de
-      software, también iniciamos a reforzar nuestro pensamiento lógico.
-    </p>
-  </article>
+        <p id="grado-info" class="text-gray-300 leading-relaxed">
+          En décimo iniciamos a familiarizarnos con el mundo del desarrollo de
+          software, también iniciamos a reforzar nuestro pensamiento lógico.
+        </p>
+      </article>
 
-  <!-- Columna derecha -->
-  <article>
-    <h2 class="text-4xl font-bold mb-8">MÓDULOS</h2>
-    <div
-      id="modulos"
-      class="space-y-6 max-h-[300px] overflow-y-auto pr-4"
-    >
-    </div>
-  </article>
-</section>
+      <article>
+        <h2 class="text-4xl font-bold mb-8">MÓDULOS</h2>
+        <div id="modulos" class="space-y-6 max-h-[300px] overflow-y-auto pr-4">
+        </div>
+      </article>
+    </section>
   </main>
-
   <Footer />
 </Layout>
 
@@ -127,7 +125,8 @@ import Layout from "../layouts/Layout.astro";
 
   const fullText = historiaEl.innerText.trim();
   const words = fullText.split(/\s+/);
-  const shortText = words.slice(0, 60).join(" ") + (words.length > 60 ? "..." : "");
+  const shortText =
+    words.slice(0, 60).join(" ") + (words.length > 60 ? "..." : "");
 
   let isExpanded = false;
 
@@ -161,43 +160,43 @@ import Layout from "../layouts/Layout.astro";
       modulos: [
         {
           titulo: "MATEMÁTICAS DISCRETAS",
-          desc: "Introducción a estructuras matemáticas y pensamiento lógico aplicado al desarrollo de software."
+          desc: "Introducción a estructuras matemáticas y pensamiento lógico aplicado al desarrollo de software.",
         },
         {
           titulo: "PROGRAMACIÓN",
-          desc: "Aprendemos los fundamentos de la programación y desarrollamos habilidades en diferentes lenguajes."
+          desc: "Aprendemos los fundamentos de la programación y desarrollamos habilidades en diferentes lenguajes.",
         },
         {
           titulo: "BASE DE DATOS",
-          desc: "Estudiamos el diseño, implementación y gestión de bases de datos para aplicaciones de software."
-        }
-      ]
+          desc: "Estudiamos el diseño, implementación y gestión de bases de datos para aplicaciones de software.",
+        },
+      ],
     },
     undecimo: {
       info: "En undécimo profundizamos en el desarrollo de software, abordamos proyectos más complejos y nos preparamos para la educación superior o el ámbito laboral.",
       modulos: [
         {
           titulo: "DESARROLLO WEB",
-          desc: "Diseño y construcción de aplicaciones web con HTML, CSS y JavaScript."
+          desc: "Diseño y construcción de aplicaciones web con HTML, CSS y JavaScript.",
         },
         {
           titulo: "INGENIERÍA DE SOFTWARE",
-          desc: "Aprendemos metodologías de desarrollo, análisis de requisitos y buenas prácticas."
+          desc: "Aprendemos metodologías de desarrollo, análisis de requisitos y buenas prácticas.",
         },
         {
           titulo: "SEGURIDAD INFORMÁTICA",
-          desc: "Introducción a conceptos de seguridad, buenas prácticas y protección de datos."
+          desc: "Introducción a conceptos de seguridad, buenas prácticas y protección de datos.",
         },
         {
           titulo: "PROYECTO FINAL",
-          desc: "Aplicación práctica integradora que demuestra las competencias adquiridas."
+          desc: "Aplicación práctica integradora que demuestra las competencias adquiridas.",
         },
         {
           titulo: "PROYECTO FINAL",
-          desc: "Aplicación práctica integradora que demuestra las competencias adquiridas."
-        }
-      ]
-    }
+          desc: "Aplicación práctica integradora que demuestra las competencias adquiridas.",
+        },
+      ],
+    },
   };
 
   // Función para renderizar módulos
@@ -228,9 +227,19 @@ import Layout from "../layouts/Layout.astro";
     renderModulos(data.decimo.modulos);
 
     btnDecimo.classList.add("bg-white", "text-black");
-    btnDecimo.classList.remove("border", "border-gray-600", "bg-transparent", "text-white");
+    btnDecimo.classList.remove(
+      "border",
+      "border-gray-600",
+      "bg-transparent",
+      "text-white"
+    );
 
-    btnUndecimo.classList.add("border", "border-gray-600", "bg-transparent", "text-white");
+    btnUndecimo.classList.add(
+      "border",
+      "border-gray-600",
+      "bg-transparent",
+      "text-white"
+    );
     btnUndecimo.classList.remove("bg-white", "text-black");
   });
 
@@ -239,9 +248,19 @@ import Layout from "../layouts/Layout.astro";
     renderModulos(data.undecimo.modulos);
 
     btnUndecimo.classList.add("bg-white", "text-black");
-    btnUndecimo.classList.remove("border", "border-gray-600", "bg-transparent", "text-white");
+    btnUndecimo.classList.remove(
+      "border",
+      "border-gray-600",
+      "bg-transparent",
+      "text-white"
+    );
 
-    btnDecimo.classList.add("border", "border-gray-600", "bg-transparent", "text-white");
+    btnDecimo.classList.add(
+      "border",
+      "border-gray-600",
+      "bg-transparent",
+      "text-white"
+    );
     btnDecimo.classList.remove("bg-white", "text-black");
   });
 </script>
