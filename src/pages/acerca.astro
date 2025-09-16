@@ -87,15 +87,15 @@ import Layout from "../layouts/Layout.astro";
     <nav class="flex gap-4 mb-6" aria-label="Información por grados">
       <button
         id="btn-decimo"
-        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+        class="bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:scale-105 transition-colors"
       >
-        Info Décimo
+        Información <br/> Décimo
       </button>
       <button
         id="btn-undecimo"
-        class="border border-gray-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors bg-transparent"
+        class="border border-gray-600 text-white px-6 py-2 rounded-full text-sm font-medium hover:scale-105 transition-colors bg-transparent"
       >
-        Info Undécimo
+        Información <br/> Undécimo
       </button>
     </nav>
 
@@ -112,7 +112,6 @@ import Layout from "../layouts/Layout.astro";
       id="modulos"
       class="space-y-6 max-h-[300px] overflow-y-auto pr-4"
     >
-      <!-- Aquí se cargan los módulos dinámicamente -->
     </div>
   </article>
 </section>
@@ -171,11 +170,6 @@ import Layout from "../layouts/Layout.astro";
         {
           titulo: "BASE DE DATOS",
           desc: "Estudiamos el diseño, implementación y gestión de bases de datos para aplicaciones de software."
-        },
-        {
-          titulo: "PRÓXIMO MÓDULO",
-          desc: "Descripción del siguiente módulo en el programa académico.",
-          inactive: true
         }
       ]
     },
