@@ -6,156 +6,129 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Blog - Desarrollo IECA">
     <Header />
-    <div class="bg-black grid justify-items-center">
+        <div class="bg-black grid justify-items-center">
         <div class="bg-red min-h-screen relative">
-            <section class="relative min-h-screen">
-                <h1
-                    class="font-poppins font-medium text-gray-light text-[250px] text-center tracking-extra-wide leading-normal whitespace-nowrap tracking-widest"
-                >
-                    BLOG
-                </h1>
+            <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4">
+            <h1
+                class="font-poppins font-medium text-gray-300 text-6xl sm:text-8xl md:text-[150px] lg:text-[200px] xl:text-[250px] tracking-widest leading-tight"
+            >
+                BLOG
+            </h1>
 
-                <img
-                    class="absolute top-[200px] left-[675px]"
-                    alt="Image"
-                    src="/slider-2.png"
-                />
+            <img
+                class="absolute top-[150px] left-1/2 -translate-x-1/2 w-40 sm:w-56 md:w-72 lg:w-[400px]"
+                alt="Image"
+                src="/slider-2.png"
+            />
             </section>
 
-            <section class="bg-black text-white py-12">
-                <div
-                    class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-6"
+            <section class="bg-black text-white py-12 px-4">
+            <div
+                class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-6"
+            >
+                <div class="flex-shrink-0">
+                <img
+                    src="/slider-3.png"
+                    alt="Mano escribiendo código en un portátil"
+                    class="w-full max-w-[280px] h-auto md:max-w-[360px] object-cover rounded-lg"
+                />
+                </div>
+
+                <div class="text-center md:text-left max-w-md">
+                <p
+                    class="text-[#0067CA] text-sm sm:text-base leading-relaxed max-w-[280px] mx-auto md:mx-0"
                 >
-                    <div class="flex-shrink-0">
-                        <img
-                            src="/slider-3.png"
-                            alt="Mano escribiendo código en un portátil"
-                            class="w-[280px] h-[160px] md:w-[360px] md:h-[200px] object-cover"
-                        />
-                    </div>
-
-                    <div class="text-center md:text-left max-w-md">
-                        <p
-                            class="text-[#0067CA] text-sm md:text-base leading-relaxed max-w-[190px]"
-                        >
-                            Conoce todo acerca de la Media Técnica y entérate de
-                            las noticias día a día.
-                        </p>
-                    </div>
+                    Conoce todo acerca de la Media Técnica y entérate de las noticias
+                    día a día.
+                </p>
                 </div>
+            </div>
 
-                <div class="flex justify-center">
-                    <a
-                        class="w-12 h-12 flex items-center justify-center rounded-full border border-white hover:bg-white hover:text-black transition"
-                        href="#main"
-                    >
-                        <svg
-                            class="w-5 h-5"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M12 3C12.5523 3 13 3.44772 13 4V17.5858L18.2929 12.2929C18.6834 11.9024 19.3166 11.9024 19.7071 12.2929C20.0976 12.6834 20.0976 13.3166 19.7071 13.7071L12.7071 20.7071C12.3166 21.0976 11.6834 21.0976 11.2929 20.7071L4.29289 13.7071C3.90237 13.3166 3.90237 12.6834 4.29289 12.2929C4.68342 11.9024 5.31658 11.9024 5.70711 12.2929L11 17.5858V4C11 3.44772 11.4477 3 12 3Z"
-                                fill="#FFFFFF"></path>
-                        </svg>
-                    </a>
-                </div>
+            <div class="flex justify-center mt-8">
+                <a
+                class="w-12 h-12 flex items-center justify-center rounded-full border border-white hover:bg-white hover:text-black transition"
+                href="#main"
+                >
+                <svg
+                    class="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 3C12.5523 3 13 3.44772 13 4V17.5858L18.2929 12.2929C18.6834 11.9024 19.3166 11.9024 19.7071 12.2929C20.0976 12.6834 20.0976 13.3166 19.7071 13.7071L12.7071 20.7071C12.3166 21.0976 11.6834 21.0976 11.2929 20.7071L4.29289 13.7071C3.90237 13.3166 3.90237 12.6834 4.29289 12.2929C4.68342 11.9024 5.31658 11.9024 5.70711 12.2929L11 17.5858V4C11 3.44772 11.4477 3 12 3Z"
+                    fill="#FFFFFF"
+                    />
+                </svg>
+                </a>
+            </div>
             </section>
 
             <main id="main">
-                <div class="bg-black text-white">
-                    <div class="max-w-7xl mx-auto px-4 py-8 space-y-8">
-                        <!-- Item 1 -->
-                        <div
-                            class="flex flex-col md:flex-row md:items-center pb-8"
+            <div class="bg-black text-white">
+                <div class="max-w-7xl mx-auto px-4 py-8 space-y-12">
+                <div
+                    class="flex flex-col md:flex-row md:items-center gap-6 border-b border-gray-800 pb-8"
+                >
+                    <div class="flex-1 md:pr-8">
+                    <h2 class="font-poppins font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5">
+                        <span
+                        class="text-gray-400 text-base sm:text-lg lg:text-xl mr-4 sm:mr-8 font-normal"
                         >
-                            <div class="flex-1 md:pr-8">
-                                <h2
-                                    class="font-poppins font-bold text-white text-6xl mb-5"
-                                >
-                                    <span
-                                        class="text-[var(--text-grey-light)] text-lg sm:text-xl lg:text-2xl text-center align-middle mr-4 sm:mr-8 lg:mr-12 font-normal"
-                                    >
-                                        / 01
-                                    </span>
-                                    PRESENTACIÓN DE
-                                    <br />
-                                    DOCENTES
-                                </h2>
-                                <p>
-                                    El día 20 de febrero se le presentó los
-                                    docentes por parte del pascual bravo que
-                                    acompañaran a los estudiantes por el resto
-                                    del año...
-                                </p>
-                            </div>
-                            <div
-                                class="ml-auto mt-4 md:mt-0 md:ml-6 flex self-end mr-10"
-                            >
-                                <i
-                                    class="fas fa-chevron-down text-white text-lg"
-                                ></i>
-                            </div>
-                            <div class="mt-6 md:mt-0 md:flex-shrink-0">
-                                <img
-                                    src="/image-14.png"
-                                    alt="Grupo de personas en una presentación en aula con proyector y una mujer entregando un documento a un hombre sentado"
-                                    class="w-[320px] h-[180px] object-cover"
-                                    width="320"
-                                    height="180"
-                                />
-                            </div>
-                        </div>
-
-                        <hr class="w-[100%] text-gray-800" />
-
-                        <div
-                            class="flex flex-col md:flex-row md:items-center pb-8"
-                        >
-                            <div class="flex-1 md:pr-8">
-                                <h2
-                                    class="font-poppins font-bold text-white text-6xl mb-5"
-                                >
-                                    <span
-                                        class="text-[var(--text-grey-light)] text-lg sm:text-xl lg:text-2xl text-center align-middle mr-4 sm:mr-8 lg:mr-12 font-normal"
-                                    >
-                                        / 02
-                                    </span>
-                                    CONVOCATORIA
-                                    <br />
-                                    A ESTUDIANTES
-                                </h2>
-                                <p>
-                                    El día 23 de octubre se le presentó a los
-                                    estudiantes del grado noveno lo que es la
-                                    Media Técnica y como pueden ingresar a
-                                    ella...
-                                </p>
-                            </div>
-                            <div
-                                class="ml-auto mt-4 md:mt-0 md:ml-6 flex self-end mr-10"
-                            >
-                                <i
-                                    class="fas fa-chevron-down text-white text-lg"
-                                ></i>
-                            </div>
-                            <div class="mt-6 md:mt-0 md:flex-shrink-0">
-                                <img
-                                    src="/image-14.png"
-                                    alt="Grupo de personas en una presentación en aula con proyector y una mujer entregando un documento a un hombre sentado"
-                                    class="w-[320px] h-[180px] object-cover"
-                                    width="320"
-                                    height="180"
-                                />
-                            </div>
-                        </div>
+                        / 01
+                        </span>
+                        PRESENTACIÓN DE
+                        <br />
+                        DOCENTES
+                    </h2>
+                    <p class="text-sm sm:text-base">
+                        El día 20 de febrero se le presentó los docentes por parte del
+                        pascual bravo que acompañaran a los estudiantes por el resto del
+                        año...
+                    </p>
+                    </div>
+                    <div class="flex-shrink-0">
+                    <img
+                        src="/image-14.png"
+                        alt="Grupo de personas en una presentación en aula"
+                        class="w-full max-w-[320px] h-auto object-cover rounded-lg"
+                    />
                     </div>
                 </div>
+
+                <div
+                    class="flex flex-col md:flex-row md:items-center gap-6 border-b border-gray-800 pb-8"
+                >
+                    <div class="flex-1 md:pr-8">
+                    <h2 class="font-poppins font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-5">
+                        <span
+                        class="text-gray-400 text-base sm:text-lg lg:text-xl mr-4 sm:mr-8 font-normal"
+                        >
+                        / 02
+                        </span>
+                        CONVOCATORIA
+                        <br />
+                        A ESTUDIANTES
+                    </h2>
+                    <p class="text-sm sm:text-base">
+                        El día 23 de octubre se le presentó a los estudiantes del grado
+                        noveno lo que es la Media Técnica y como pueden ingresar a ella...
+                    </p>
+                    </div>
+                    <div class="flex-shrink-0">
+                    <img
+                        src="/image-14.png"
+                        alt="Grupo de personas en una presentación en aula"
+                        class="w-full max-w-[320px] h-auto object-cover rounded-lg"
+                    />
+                    </div>
+                </div>
+                </div>
+            </div>
             </main>
         </div>
-    </div>
+        </div>
     <Footer />
 </Layout>
